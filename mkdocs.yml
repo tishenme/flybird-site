@@ -1,4 +1,4 @@
-site_name: Small Bird Site
+site_name: Flybird Site
 site_url: https://tishenme.github.io/flybird-site/
 site_author: Tishen
 site_description: >-
@@ -12,8 +12,8 @@ copyright: Copyright &copy; 2024 ~ now | 🚀 Tishen
 
 theme:
   custom_dir: material/overrides
-  favicon: assets/small-bird-icon-128x128.png
-  logo: assets/small-bird-icon-128x128.png
+  favicon: assets/flybird-icon-128x128.png
+  logo: assets/flybird-icon-128x128.png
   # language: zh
   language: en
   name: material
