@@ -7,16 +7,15 @@
 
 ## Guideline
 
-- 官方教程
+- Office cource
 
   - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)
 
-- 参考博客
-
-  - [未央学习](https://weyoung-learn.github.io/skills/mkdocs/)
-  - [Eureka!](http://www.cuishuaiwen.com:8000/zh/PROJECT/TECH-BLOG/mkdocs_and_material/)
+- Refernce cource
+  
   - [Cloud Notes](https://notes.lzwang.ltd/Python/)
   - [create-blog](https://github.com/mkdocs-material/create-blog/blob/main/mkdocs.yml)
+  - [Eureka!](http://www.cuishuaiwen.com:8000/zh/PROJECT/TECH-BLOG/mkdocs_and_material/)
 
 ## Use poetry
 
@@ -48,6 +47,8 @@ poetry env info
 poetry shell
 exit
 
+# poetry add [package-name]
+
 # add package bgein
 poetry add jinja2~=3.0
 poetry add markdown~=3.2
@@ -66,7 +67,7 @@ poetry add mkdocs-rss-plugin
 poetry add mkdocs-static-i18n
 # add package end
 
-# poetry remove requests
+# poetry remove [package-name]
 
 # update
 poetry update
@@ -116,4 +117,5 @@ mkdocs build
 # Run the website
 conda activate venv_conda_312_mkdocs
 mkdocs serve
+
 ```
