@@ -131,12 +131,14 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  # - pymdownx.tabbed:
-  #     alternate_style: true
-  #     combine_header_slug: true
-  #     slugify: !!python/object/apply:pymdownx.slugs.slugify
-  #       kwds:
-  #         case: lower
+            # - pymdownx.tabbed:
+            #     alternate_style: true
+            #     combine_header_slug: true
+            #     slugify: !!python/object/apply:pymdownx.slugs.slugify
+            #       kwds:
+            #         case: lower
+
+
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
@@ -167,14 +169,11 @@ plugins:
       reconfigure_material: true
       reconfigure_search: true
       languages:
-        - locale: en
-          default: true
-          name: English
-          build: true
         - locale: zh
-          name: 简体中文
+          name: zh 简体中文
           build: true
-          nav_translations: # note that all titles and subtitles in the navigation bar that need to be translated can be put here, but with no indentation
+          default: true
+          nav_translations:
             Home: 首页
             About: 关于
             Sponsorship: 赞助
@@ -184,6 +183,19 @@ plugins:
             VCS: 版本控制
             CICD: 持续集成/持续部署
             Cloud: 云服务
+        - locale: en
+          name: gb English
+          build: true
+          nav_translations:
+            # 首页: Home
+            # 关于: About
+            # 赞助: Sponsorship
+            # 软件: Soft
+            # 开发语言: DL
+            # 开发工具: IDE
+            # 版本控制: VCS
+            # 持续集成/持续部署: CICD
+            # 云服务: Cloud
 
 nav:
   - Home:
