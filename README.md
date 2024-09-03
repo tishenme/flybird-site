@@ -12,7 +12,7 @@
   - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)
 
 - Refernce cource
-  
+
   - [Cloud Notes](https://notes.lzwang.ltd/Python/)
   - [create-blog](https://github.com/mkdocs-material/create-blog/blob/main/mkdocs.yml)
   - [Eureka!](http://www.cuishuaiwen.com:8000/zh/PROJECT/TECH-BLOG/mkdocs_and_material/)
@@ -37,7 +37,7 @@ poetry config virtualenvs.in-project true
 cd D:\CodeWork\IDE_Microsoft_VSCode_Workspace
 poetry new flybird-site
 
-# venv
+# venv ( default python version should be 3.12 )
 poetry source add tsinghua https://pypi.tuna.tsinghua.edu.cn/simple
 poetry env remove python
 poetry env use python
@@ -75,6 +75,10 @@ poetry show --tree
 
 # export
 poetry export -f requirements.txt -o requirements.txt --without-hashes
+
+# mkdocs
+poetry run mkdocs build
+poetry run mkdocs serve
 
 ```
 

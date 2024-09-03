@@ -4,10 +4,10 @@ comments: flase
 
 # 🔭 海纳百川，有容乃大
 
-![GitHub repo size](https://img.shields.io/github/repo-size/tishenme/smallbird-site)
-![GitHub stars](https://img.shields.io/github/stars/tishenme/smallbird-site?style=social)
-![GitHub forks](https://img.shields.io/github/forks/tishenme/smallbird-site?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/tishenme/smallbird-site?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/tishenme/flybird-site)
+![GitHub stars](https://img.shields.io/github/stars/tishenme/flybird-site?style=social)
+![GitHub forks](https://img.shields.io/github/forks/tishenme/flybird-site?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/tishenme/flybird-site?style=social)
 
 !!! quote
     海纳百川，有容乃大；壁立千仞，无欲则刚。
