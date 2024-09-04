@@ -58,8 +58,8 @@ poetry env use python
 poetry env info
 
 # use conda venv python
-Remove-Item -Path.\.venv -Recurse
-Remove-Item -Path poetry.lock -Recurse
+Remove-Item -Path .\.venv -Recurse
+Remove-Item -Path .\poetry.lock -Recurse
 conda env list
 poetry env use "D:\CodeWork\DL_Python\venv_conda\venv_conda_project_flybird-site\python.exe"
 
