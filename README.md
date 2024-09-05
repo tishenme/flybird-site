@@ -26,7 +26,7 @@ conda deactivate
 conda remove -n venv_conda_project_flybird-site --all -y
 conda create python=3.12 -n venv_conda_project_flybird-site -y
 conda activate venv_conda_project_flybird-site
-python.exe -m pip install --upgrade pip
+python -m pip install --upgrade pip
 pip install --upgrade pip
 pip install --upgrade setuptools
 pip list
@@ -62,6 +62,7 @@ Remove-Item -Path .\.venv -Recurse
 Remove-Item -Path .\poetry.lock -Recurse
 conda env list
 poetry env use "D:\CodeWork\DL_Python\venv_conda\venv_conda_project_flybird-site\python.exe"
+poetry env use /opt/homebrew/Caskroom/miniconda/base/envs/venv_conda_project_flybird-site/bin/python
 
 # poetry add [package-name]
 
