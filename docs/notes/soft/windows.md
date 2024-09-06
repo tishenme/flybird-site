@@ -1,10 +1,11 @@
-# 装机必备
+# Windows
 
-::: tip
-本人装机首选软件 说不定有你需要的
-:::
+!!! tip
+    本人装机首选软件 说不定有你需要的
 
-- ## 系统工具
+## 装机必备
+
+- ### 系统工具
 
 | 软件                | 描述                             | 官网地址                                                 | 下载渠道                                        |
 | :------------------ | :------------------------------- | :------------------------------------------------------- | :---------------------------------------------- |
@@ -15,7 +16,7 @@
 | Wise Care 365       | 世界上最快的系统优化软件         | [官网地址](https://www.wisecleaner.com.cn)               | [下载渠道](https://www.423down.com/3471.html)   |
 | 华为电脑管家        | 华为生态 需要就上                | [官网地址](https://guanjia.lenovo.com.cn/)               | [下载渠道](https://space.bilibili.com/28516198) |
 
-- ## 硬件工具
+- ### 硬件工具
 
 | 软件               | 描述                         | 官网地址                                                                                  | 下载渠道                                                                        |
 | :----------------- | :--------------------------- | :---------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
@@ -37,74 +38,74 @@
 
 - **7-Zip**
 
-  > [官网地址](https://www.7-zip.org/)  
+  > [官网地址](https://www.7-zip.org/)
   > 有极高压缩比的开源压缩软件
 
 - **360 压缩**
 
-  > [官网地址](https://yasuo.360.cn)  
+  > [官网地址](https://yasuo.360.cn)
   > 压缩格式多 免费无广告
 
 - **QQ 拼音输入法**
 
-  > [官网地址](http://qq.pinyin.cn)  
+  > [官网地址](http://qq.pinyin.cn)
   > 比搜狗好的太多 主要没广告
 
 - **SwitchHosts**
 
-  > [官网地址](https://github.com/oldj/SwitchHosts)  
+  > [官网地址](https://github.com/oldj/SwitchHosts)
   > 快速切换不同的 hosts 设置、编辑 hosts 文件
 
 - **TrafficMonitor**
 
-  > [官网地址](https://github.com/zhongyang219/TrafficMonitor)  
+  > [官网地址](https://github.com/zhongyang219/TrafficMonitor)
   > 网速监控悬浮窗软件 可以显示当前网速 CPU 及内存利用率
 
 - **Bing Wallpaper**
 
-  > [官网地址](https://www.microsoft.com/zh-cn/bing/bing-wallpaper?rtc=1#primaryR2)  
+  > [官网地址](https://www.microsoft.com/zh-cn/bing/bing-wallpaper?rtc=1#primaryR2)
   > 一次浏览一张照片来探索世界
 
 - **PowerToys**
 
-  > [官网地址](https://docs.microsoft.com/zh-cn/windows/powertoys/)  
-  > [下载渠道](https://github.com/microsoft/PowerToys)  
+  > [官网地址](https://docs.microsoft.com/zh-cn/windows/powertoys/)
+  > [下载渠道](https://github.com/microsoft/PowerToys)
   > 自定义 Windows 的实用工具
 
 - **Snipaste**
 
-  > [官网地址](https://www.snipaste.com/)  
+  > [官网地址](https://www.snipaste.com/)
   > 一款「截图 + 贴图」的工具
 
 - **Bandicam**
 
-  > [官网地址](https://www.bandicam.cn/)  
-  > [下载渠道](https://www.423down.com/2119.html)  
+  > [官网地址](https://www.bandicam.cn/)
+  > [下载渠道](https://www.423down.com/2119.html)
   > 一款简单好用的录屏软件
 
 - **Ditto**
 
-  > [官网地址](https://ditto-cp.sourceforge.io)  
+  > [官网地址](https://ditto-cp.sourceforge.io)
   > 免费开源的剪贴板增强软件
 
 - **Everything**
 
-  > [官网地址](https://www.voidtools.com/zh-cn/)  
+  > [官网地址](https://www.voidtools.com/zh-cn/)
   > 基于名称快速定位文件和文件夹
 
 - **uTools**
 
-  > [官网地址](https://u.tools)  
+  > [官网地址](https://u.tools)
   > 你的生产力工具集 自由集成丰富插件
 
 - **互传**
 
-  > [官网地址](https://es.vivo.com.cn/)  
+  > [官网地址](https://es.vivo.com.cn/)
   > 零流量、极速/多平台
 
 - **钱迹**
 
-  > [官网地址](https://www.qianjiapp.com/)  
+  > [官网地址](https://www.qianjiapp.com/)
   > 个人财务管理 发现记账的乐趣 全平台支持
 
 - ## 上网冲浪
@@ -115,36 +116,36 @@
 
 - **Edge**
 
-  > [官网地址](https://www.microsoft.com/zh-cn/edge)  
-  > [下载渠道](https://www.423down.com/9450.html)  
+  > [官网地址](https://www.microsoft.com/zh-cn/edge)
+  > [下载渠道](https://www.423down.com/9450.html)
   > 全新界面更加清爽现代化
 
 - **Chrome**
 
-  > [官网地址](https://www.google.cn/chrome/)  
-  > [下载渠道](https://www.423down.com/3310.html)  
+  > [官网地址](https://www.google.cn/chrome/)
+  > [下载渠道](https://www.423down.com/3310.html)
   > 最强的浏览器 没有对手的存在
 
 - **Firefox**
 
-  > [官网地址](https://www.firefox.com.cn)  
-  > [下载渠道](https://www.423down.com/2469.html)  
+  > [官网地址](https://www.firefox.com.cn)
+  > [下载渠道](https://www.423down.com/2469.html)
   > 号称最快的浏览器 用的还行
 
 - **360 安全浏览器**
 
-  > [官网地址](https://browser.360.cn/se/)  
+  > [官网地址](https://browser.360.cn/se/)
   > 国内高端用户首选的浏览器
 
 - **360 极速浏览器**
 
-  > [官网地址](https://browser.360.cn/ee/)  
+  > [官网地址](https://browser.360.cn/ee/)
   > 国内高端用户首选的浏览器
 
 - **奔跑的奶酪**
 
-  > [官网地址](https://www.runningcheese.com/)  
-  > [官网地址](https://www.runningcheese.com/)  
+  > [官网地址](https://www.runningcheese.com/)
+  > [官网地址](https://www.runningcheese.com/)
   > 提供 Edge Chrome Firefox 各个平台增强绿色版
 
 | 软件  | 描述 | 官网地址 | 下载渠道 |
@@ -180,12 +181,12 @@
 
 - **迅雷**
 
-  > [官网地址](https://dl.xunlei.com)  
+  > [官网地址](https://dl.xunlei.com)
   > 更快 但不止于快
 
 - **BitTorrent Tracker**
 
-  > [官网地址](https://trackerslist.com/)  
+  > [官网地址](https://trackerslist.com/)
   > 全网热门 BitTorrent Tracker 列表！
 
 - ## 网盘工具
@@ -196,13 +197,13 @@
 
 - **百度网盘**
 
-  > [官网地址](http://pan.baidu.com/download)  
+  > [官网地址](http://pan.baidu.com/download)
   > 基本必须下载的网盘 主要资源多
 
 - **坚果云**
 
-  > [官网地址](https://www.jianguoyun.com/s/downloads)  
-  > 帮助企业中的变革者改善工作效率和方法  
+  > [官网地址](https://www.jianguoyun.com/s/downloads)
+  > 帮助企业中的变革者改善工作效率和方法
   > 主要为了使用 WebDAV
 
 - ## 办公软件
@@ -213,51 +214,51 @@
 
 - **欧路词典**
 
-  > [官网地址](https://www.eudic.net/v4/en/app/eudic)  
+  > [官网地址](https://www.eudic.net/v4/en/app/eudic)
   > 权威的英语词典软件 英语学习者必备的工具
 
 - **Microsoft Office**
 
-  > [官网地址](https://www.microsoft.com/zh-cn/microsoft-365)  
-  > [下载渠道](https://otp.landian.vip/zh-cn/)  
+  > [官网地址](https://www.microsoft.com/zh-cn/microsoft-365)
+  > [下载渠道](https://otp.landian.vip/zh-cn/)
   > 微软 Office 兼容性最好的
 
 - **WPS**
 
-  > [官网地址](https://www.wps.cn)  
-  > [下载渠道](https://www.423down.com/8890.html)  
+  > [官网地址](https://www.wps.cn)
+  > [下载渠道](https://www.423down.com/8890.html)
   > 免费小巧 购买会员就没有广告了
 
 - **iSlide**
 
-  > [官网地址](https://www.islide.cc/)  
+  > [官网地址](https://www.islide.cc/)
   > 基于 PPT 的插件工具 注意需要付费
 
 - **XMind**
 
-  > [官网地址](https://www.xmind.cn)  
-  > [下载渠道](https://www.423down.com/9212.html)  
+  > [官网地址](https://www.xmind.cn)
+  > [下载渠道](https://www.423down.com/9212.html)
   > 全功能的思维导图和头脑风暴软件
 
 - **亿图图示**
 
-  > [官网地址](https://www.edrawsoft.cn/)  
-  > [下载渠道](https://www.423down.com/8077.html)  
+  > [官网地址](https://www.edrawsoft.cn/)
+  > [下载渠道](https://www.423down.com/8077.html)
   > 260 余种办公绘图类型 流程图 架构图 工业设计 图文混排 一软搞定
 
 - **为知笔记**
 
-  > [官网地址](https://www.wiz.cn/zh-cn/wiznew.html)  
+  > [官网地址](https://www.wiz.cn/zh-cn/wiznew.html)
   > 大脑是用来思考的 记录的事情交给我们
 
 - **FlowUs 息流**
 
-  > [官网地址](https://flowus.cn/product)  
+  > [官网地址](https://flowus.cn/product)
   > 新一代知识管理与协作平台
 
 - **VNote**
 
-  > [官网地址](https://github.com/vnotex/vnote)  
+  > [官网地址](https://github.com/vnotex/vnote)
   > 一个舒适的笔记平台
 
 - ## 通讯协作
@@ -268,28 +269,28 @@
 
 - **QQ**
 
-  > [官网地址](https://im.qq.com)  
+  > [官网地址](https://im.qq.com)
   > I'm QQ - 每一天 乐在沟通
 
 - **微信**
 
-  > [官网地址](https://weixin.qq.com)  
+  > [官网地址](https://weixin.qq.com)
   > 微信 是一个生活方式
 
 - **网易邮箱大师**
 
-  > [官网地址](https://mail.163.com/dashi/index.html)  
+  > [官网地址](https://mail.163.com/dashi/index.html)
   > 高效强大的全平台邮箱客户端
 
 - **Zoom**
 
-  > [官网地址](https://www.zoom.us/)  
-  > [下载渠道](https://www.zoom.us/download#client_4meeting)  
+  > [官网地址](https://www.zoom.us/)
+  > [下载渠道](https://www.zoom.us/download#client_4meeting)
   > 视频会议、云电话、网络研讨会
 
 - **腾讯会议**
 
-  > [官网地址](https://meeting.tencent.com/)  
+  > [官网地址](https://meeting.tencent.com/)
   > 腾讯会议,会开会
 
 - ## 设计制作
@@ -300,20 +301,20 @@
 
 - **2345 看图王**
 
-  > [官网地址](https://pic.2345.cc)  
-  > [下载渠道](https://www.423down.com/4111.html)  
+  > [官网地址](https://pic.2345.cc)
+  > [下载渠道](https://www.423down.com/4111.html)
   > 一款超好用的看图软件
 
 - **Adobe**
 
-  > [官网地址](https://www.adobe.com/cn/)  
-  > [哔哩主页](https://space.bilibili.com/252157636)  
-  > [微博大咖](https://weibo.com/vposy?profile_ftype=1&is_all=1#_0)  
+  > [官网地址](https://www.adobe.com/cn/)
+  > [哔哩主页](https://space.bilibili.com/252157636)
+  > [微博大咖](https://weibo.com/vposy?profile_ftype=1&is_all=1#_0)
   > Adobe 正通过数字体验改变世界
 
 - **Axure**
 
-  > [官网地址](https://www.axure.com.cn/)  
+  > [官网地址](https://www.axure.com.cn/)
   > 专业的快速原型设计工具
 
 - ## 影音娱乐
@@ -324,15 +325,101 @@
 
 - **Listen1**
 
-  > [官网地址](https://listen1.github.io/listen1/)  
+  > [官网地址](https://listen1.github.io/listen1/)
   > One for all free music in China
 
 - **PotPlayer**
 
-  > [官网地址](https://potplayer.org/)  
-  > [下载渠道](http://www.potplayercn.com/download)  
+  > [官网地址](https://potplayer.org/)
+  > [下载渠道](http://www.potplayercn.com/download)
   > Win 平台上最优秀的免费影音全能格式播放器
 
 - **WeGame**
-  > [官网地址](https://www.wegame.com.cn/)  
+  > [官网地址](https://www.wegame.com.cn/)
   > WeGame 游戏商店
+
+# 开发工具
+
+::: tip
+程序员是最会偷懒的人 你学会了么
+:::
+
+- **Bluestacks**
+
+  > [官网地址](https://www.bluestacks.com)
+  > [下载渠道](https://www.bluestacks.com/bluestacks-5.html)
+  > VMware 是功能最强大的虚拟机软件
+
+- **VMware**
+
+  > [官网地址](https://customerconnect.vmware.com/cn/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/16_0)
+  > [下载渠道](https://www.423down.com/5928.html)
+  > 包含 Xmanager Xshell Xftp Xlpd
+
+- ## 远程控制
+
+  - **向日葵远程控制**
+
+    > [官网地址](https://sunlogin.oray.com/)
+    > VMware 是功能最强大的虚拟机软件
+
+  - **Xmanager Power Suite**
+    > [官网地址](https://www.xshell.com/zh/)
+    > [下载渠道-官方](https://www.xshell.com/zh/xmanager-power-suite-download/)
+    > [下载渠道-三方-423DOWN](https://www.423down.com/10045.html)
+    > [下载渠道-三方-果核剥壳](https://www.ghxi.com/xmanagerpowersuite.html)
+    > 包含 Xmanager Xshell Xftp Xlpd
+
+- ## 开发环境
+
+  - **Spring_STS**
+
+    > [官网地址](https://spring.io/tools)
+    > 定制版的 Eclipse 专为 Spring 开发定制的
+
+  - **Microsoft_VSCode**
+
+    > [官网地址](https://code.visualstudio.com)
+    > 免费开源的现代化轻量级代码编辑器 支持几乎所有主流的开发语言
+
+  - **JetBrains_All**
+
+    > [官网地址](https://www.jetbrains.com)
+    > 完整的开发人员工具包
+
+  - **DCloud_HBuilderX**
+    > [官网地址](https://www.dcloud.io)
+    > 轻量编辑器和强大 IDE 的完美结合体 适合前端开发 尤其是 Vue
+
+- ## 工具集锦
+
+  - **Notepad++**
+
+    > [官网地址](https://notepad-plus-plus.org)
+    > [下载渠道](https://www.423down.com/8867.html)
+    > 免费的强大文本编辑器
+
+  - **EditPlus**
+
+    > [官网地址](https://www.editplus.com)
+    > [下载渠道](https://www.423down.com/1689.html)
+    > 小巧强大的代码文本编辑器
+
+  - **Navicat**
+
+    > [官网地址](https://www.navicat.com.cn/download/navicat-premium)
+    > Navicat Premium 是一套可创建多个连接的数据库开发工具
+
+  - **PDManer**
+
+    > [官网地址](https://gitee.com/robergroup/pdmaner)
+    > 数据库建模
+
+  - **Postman**
+
+    > [官网地址](https://www.postman.com/)
+    > HTTP 协议的接口调试与测试工具
+
+  - **Apifox**
+    > [官网地址](https://www.apifox.cn/)
+    > API 一体化协作平台

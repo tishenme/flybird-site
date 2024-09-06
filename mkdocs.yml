@@ -203,7 +203,9 @@ nav:
       - About: "./notes/home/about.md"
       - Sponsorship: "./notes/home/sponsorship.md"
   - Soft:
-      - "./notes/soft/soft.md"
+      - Windows: "./notes/soft/windows.md"
+      - Mac: "./notes/soft/mac.md"
+      - Android: "./notes/soft/android.md"
   - DL:
       - "./notes/dl/index.md"
       - Java: "./notes/dl/java/index.md"
