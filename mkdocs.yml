@@ -137,8 +137,6 @@ markdown_extensions:
             #     slugify: !!python/object/apply:pymdownx.slugs.slugify
             #       kwds:
             #         case: lower
-
-
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
@@ -186,16 +184,6 @@ plugins:
         - locale: en
           name: gb English
           build: true
-          nav_translations:
-            # 首页: Home
-            # 关于: About
-            # 赞助: Sponsorship
-            # 软件: Soft
-            # 开发语言: DL
-            # 开发工具: IDE
-            # 版本控制: VCS
-            # 持续集成/持续部署: CICD
-            # 云服务: Cloud
 
 nav:
   - Home:

@@ -1,20 +1,19 @@
 # Windows
 
 !!! tip
-    本人装机首选软件 说不定有你需要的
+Windows 的软件非常多 分享一下自己觉得好用的
 
 ## 装机必备
 
 - ### 系统工具
 
-| 软件                | 描述                             | 官网地址                                                 | 下载渠道                                        |
-| :------------------ | :------------------------------- | :------------------------------------------------------- | :---------------------------------------------- |
-| 360 安全卫士-极速版 | 安全防护 推荐极速版 无广告无弹窗 | [官网地址](https://weishi.360.cn/jisu/?source=homepage/) |                                                 |
-| 火绒                | 专业尽职 极致低调                | [官网地址](https://www.huorong.cn/person5.html)          |                                                 |
-| CCleaner            | 系统优化和隐私保护工具           | [官网地址](https://www.ccleaner.com)                     | [下载渠道](https://www.423down.com/716.html)    |
-| Geek                | 免费的软件卸载利器               | [官网地址](https://geekuninstaller.com)                  | [下载渠道](https://www.423down.com/2668.html)   |
-| Wise Care 365       | 世界上最快的系统优化软件         | [官网地址](https://www.wisecleaner.com.cn)               | [下载渠道](https://www.423down.com/3471.html)   |
-| 华为电脑管家        | 华为生态 需要就上                | [官网地址](https://guanjia.lenovo.com.cn/)               | [下载渠道](https://space.bilibili.com/28516198) |
+| 软件                | 描述                             | 官网地址                                                 | 下载渠道                                      |
+| :------------------ | :------------------------------- | :------------------------------------------------------- | :-------------------------------------------- |
+| 360 安全卫士-极速版 | 安全防护 推荐极速版 无广告无弹窗 | [官网地址](https://weishi.360.cn/jisu/?source=homepage/) |                                               |
+| 火绒                | 专业尽职 极致低调                | [官网地址](https://www.huorong.cn/person5.html)          |                                               |
+| CCleaner            | 系统优化和隐私保护工具           | [官网地址](https://www.ccleaner.com)                     | [下载渠道](https://www.423down.com/716.html)  |
+| Geek                | 免费的软件卸载利器               | [官网地址](https://geekuninstaller.com)                  | [下载渠道](https://www.423down.com/2668.html) |
+| Wise Care 365       | 世界上最快的系统优化软件         | [官网地址](https://www.wisecleaner.com.cn)               | [下载渠道](https://www.423down.com/3471.html) |
 
 - ### 硬件工具
 
@@ -30,396 +29,155 @@
 | WDC Dashboard      | 西数固态硬盘管理工具         | [官网地址](https://support-en.wd.com/app/products/product-detailweb/p/1457#WD_downloads)  | [下载渠道](https://wddashboarddownloads.wdc.com/wdDashboard/DashboardSetup.exe) |
 | 罗技 Logi Options+ | 罗技管理软件                 | [驱动地址](https://www.logitech.com.cn/zh-cn/software/logi-options-plus.html)             | [离线安装](https://prosupport.logi.com/hc/zh-cn/articles/10991109278871)        |
 
-- ## 实用工具
-
-| 软件  | 描述 | 官网地址 | 下载渠道 |
-| :---- | :--- | :------- | :------- |
-| xxxxx | xxxx | xxxxx    | xxxxx    |
-
-- **7-Zip**
-
-  > [官网地址](https://www.7-zip.org/)
-  > 有极高压缩比的开源压缩软件
-
-- **360 压缩**
-
-  > [官网地址](https://yasuo.360.cn)
-  > 压缩格式多 免费无广告
-
-- **QQ 拼音输入法**
-
-  > [官网地址](http://qq.pinyin.cn)
-  > 比搜狗好的太多 主要没广告
-
-- **SwitchHosts**
-
-  > [官网地址](https://github.com/oldj/SwitchHosts)
-  > 快速切换不同的 hosts 设置、编辑 hosts 文件
-
-- **TrafficMonitor**
-
-  > [官网地址](https://github.com/zhongyang219/TrafficMonitor)
-  > 网速监控悬浮窗软件 可以显示当前网速 CPU 及内存利用率
-
-- **Bing Wallpaper**
-
-  > [官网地址](https://www.microsoft.com/zh-cn/bing/bing-wallpaper?rtc=1#primaryR2)
-  > 一次浏览一张照片来探索世界
-
-- **PowerToys**
-
-  > [官网地址](https://docs.microsoft.com/zh-cn/windows/powertoys/)
-  > [下载渠道](https://github.com/microsoft/PowerToys)
-  > 自定义 Windows 的实用工具
-
-- **Snipaste**
-
-  > [官网地址](https://www.snipaste.com/)
-  > 一款「截图 + 贴图」的工具
-
-- **Bandicam**
-
-  > [官网地址](https://www.bandicam.cn/)
-  > [下载渠道](https://www.423down.com/2119.html)
-  > 一款简单好用的录屏软件
-
-- **Ditto**
-
-  > [官网地址](https://ditto-cp.sourceforge.io)
-  > 免费开源的剪贴板增强软件
-
-- **Everything**
-
-  > [官网地址](https://www.voidtools.com/zh-cn/)
-  > 基于名称快速定位文件和文件夹
-
-- **uTools**
-
-  > [官网地址](https://u.tools)
-  > 你的生产力工具集 自由集成丰富插件
-
-- **互传**
-
-  > [官网地址](https://es.vivo.com.cn/)
-  > 零流量、极速/多平台
-
-- **钱迹**
-
-  > [官网地址](https://www.qianjiapp.com/)
-  > 个人财务管理 发现记账的乐趣 全平台支持
-
-- ## 上网冲浪
-
-| 软件  | 描述 | 官网地址 | 下载渠道 |
-| :---- | :--- | :------- | :------- |
-| xxxxx | xxxx | xxxxx    | xxxxx    |
-
-- **Edge**
-
-  > [官网地址](https://www.microsoft.com/zh-cn/edge)
-  > [下载渠道](https://www.423down.com/9450.html)
-  > 全新界面更加清爽现代化
-
-- **Chrome**
-
-  > [官网地址](https://www.google.cn/chrome/)
-  > [下载渠道](https://www.423down.com/3310.html)
-  > 最强的浏览器 没有对手的存在
-
-- **Firefox**
-
-  > [官网地址](https://www.firefox.com.cn)
-  > [下载渠道](https://www.423down.com/2469.html)
-  > 号称最快的浏览器 用的还行
-
-- **360 安全浏览器**
-
-  > [官网地址](https://browser.360.cn/se/)
-  > 国内高端用户首选的浏览器
-
-- **360 极速浏览器**
-
-  > [官网地址](https://browser.360.cn/ee/)
-  > 国内高端用户首选的浏览器
-
-- **奔跑的奶酪**
-
-  > [官网地址](https://www.runningcheese.com/)
-  > [官网地址](https://www.runningcheese.com/)
-  > 提供 Edge Chrome Firefox 各个平台增强绿色版
-
-| 软件  | 描述 | 官网地址 | 下载渠道 |
-| :---- | :--- | :------- | :------- |
-| xxxxx | xxxx | xxxxx    | xxxxx    |
-
-- **拓展推荐**
-- > [**拓展搜索**](https://chrome.google.com/webstore/category/extensions)
-  >
-  > - [迅雷下载支持](https://chrome.google.com/webstore/detail/%E8%BF%85%E9%9B%B7%E4%B8%8B%E8%BD%BD%E6%94%AF%E6%8C%81/ncennffkjdiamlpmcbajkmaiiiddgioo)
-  > - [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  > - [二维码（生成及识别）](https://chrome.google.com/webstore/detail/qr-code-generator-and-rea/hkojjajclkgeijhcmfjcjkddfjpaimek)
-  > - [Don't Close Window With Last Tab](https://chrome.google.com/webstore/detail/dont-close-window-with-la/dlnpfhfhmkiebpnlllpehlmklgdggbhn)
-  > - [Tab Session Manager](https://chrome.google.com/webstore/detail/tab-session-manager/iaiomicjabeggjcfkbimgmglanimpnae)
-  > - [Aerys - 窗口标签管理器](https://chrome.google.com/webstore/detail/aerys-tab-manager/kclbicheojedbinfjdjjolmciodoihkl)
-  > - [Chrome 清理大师](https://chrome.google.com/webstore/detail/clean-master-the-best-chr/eagiakjmjnblliacokhcalebgnhellfi)
-  > - [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
-  > - [AdGuard 广告拦截器](https://chrome.google.com/webstore/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg)
-  > - [Bitwarden - 免费密码管理器](https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb)
-  > - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-  > - [浮图秀](https://chrome.google.com/webstore/detail/photoshow/mgpdnhlllbpncjpgokgfogidhoegebod)
-  > - [沙拉查词-聚合词典划词翻译](https://chrome.google.com/webstore/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D-%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/cdonnmffkdaoajfknoeeecmchibpmkmg)
-  > - [京价保 - 京东价保助手](https://chrome.google.com/webstore/detail/%E4%BA%AC%E4%BB%B7%E4%BF%9D-%E4%BA%AC%E4%B8%9C%E4%BB%B7%E4%BF%9D%E5%8A%A9%E6%89%8B/gfgkebiommjpiaomalcbfefimhhanlfd)
-  > - [喵喵折+](https://chrome.google.com/webstore/detail/%E5%96%B5%E5%96%B5%E6%8A%98%20/ekbmhggedfdlajiikminikhcjffbleac)
-  > - [稀土掘金](https://chrome.google.com/webstore/detail/%E7%A8%80%E5%9C%9F%E6%8E%98%E9%87%91/lecdifefmmfjnjjinhaennhdlmcaeeeb)
-  > - [哔哩哔哩助手：bilibili.com 综合辅助扩展](https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh)
-
-- ## 下载工具
-
-| 软件  | 描述 | 官网地址 | 下载渠道 |
-| :---- | :--- | :------- | :------- |
-| xxxxx | xxxx | xxxxx    | xxxxx    |
-
-- **迅雷**
-
-  > [官网地址](https://dl.xunlei.com)
-  > 更快 但不止于快
-
-- **BitTorrent Tracker**
-
-  > [官网地址](https://trackerslist.com/)
-  > 全网热门 BitTorrent Tracker 列表！
-
-- ## 网盘工具
-
-| 软件  | 描述 | 官网地址 | 下载渠道 |
-| :---- | :--- | :------- | :------- |
-| xxxxx | xxxx | xxxxx    | xxxxx    |
-
-- **百度网盘**
-
-  > [官网地址](http://pan.baidu.com/download)
-  > 基本必须下载的网盘 主要资源多
-
-- **坚果云**
-
-  > [官网地址](https://www.jianguoyun.com/s/downloads)
-  > 帮助企业中的变革者改善工作效率和方法
-  > 主要为了使用 WebDAV
-
-- ## 办公软件
-
-| 软件  | 描述 | 官网地址 | 下载渠道 |
-| :---- | :--- | :------- | :------- |
-| xxxxx | xxxx | xxxxx    | xxxxx    |
-
-- **欧路词典**
-
-  > [官网地址](https://www.eudic.net/v4/en/app/eudic)
-  > 权威的英语词典软件 英语学习者必备的工具
-
-- **Microsoft Office**
-
-  > [官网地址](https://www.microsoft.com/zh-cn/microsoft-365)
-  > [下载渠道](https://otp.landian.vip/zh-cn/)
-  > 微软 Office 兼容性最好的
-
-- **WPS**
-
-  > [官网地址](https://www.wps.cn)
-  > [下载渠道](https://www.423down.com/8890.html)
-  > 免费小巧 购买会员就没有广告了
-
-- **iSlide**
-
-  > [官网地址](https://www.islide.cc/)
-  > 基于 PPT 的插件工具 注意需要付费
-
-- **XMind**
-
-  > [官网地址](https://www.xmind.cn)
-  > [下载渠道](https://www.423down.com/9212.html)
-  > 全功能的思维导图和头脑风暴软件
-
-- **亿图图示**
-
-  > [官网地址](https://www.edrawsoft.cn/)
-  > [下载渠道](https://www.423down.com/8077.html)
-  > 260 余种办公绘图类型 流程图 架构图 工业设计 图文混排 一软搞定
-
-- **为知笔记**
-
-  > [官网地址](https://www.wiz.cn/zh-cn/wiznew.html)
-  > 大脑是用来思考的 记录的事情交给我们
-
-- **FlowUs 息流**
-
-  > [官网地址](https://flowus.cn/product)
-  > 新一代知识管理与协作平台
-
-- **VNote**
-
-  > [官网地址](https://github.com/vnotex/vnote)
-  > 一个舒适的笔记平台
-
-- ## 通讯协作
-
-| 软件  | 描述 | 官网地址 | 下载渠道 |
-| :---- | :--- | :------- | :------- |
-| xxxxx | xxxx | xxxxx    | xxxxx    |
-
-- **QQ**
-
-  > [官网地址](https://im.qq.com)
-  > I'm QQ - 每一天 乐在沟通
-
-- **微信**
-
-  > [官网地址](https://weixin.qq.com)
-  > 微信 是一个生活方式
-
-- **网易邮箱大师**
-
-  > [官网地址](https://mail.163.com/dashi/index.html)
-  > 高效强大的全平台邮箱客户端
-
-- **Zoom**
-
-  > [官网地址](https://www.zoom.us/)
-  > [下载渠道](https://www.zoom.us/download#client_4meeting)
-  > 视频会议、云电话、网络研讨会
-
-- **腾讯会议**
-
-  > [官网地址](https://meeting.tencent.com/)
-  > 腾讯会议,会开会
+- ### 实用工具
+
+| 软件           | 描述                                                 | 官网地址                                                                        | 下载渠道                                           |
+| :------------- | :--------------------------------------------------- | :------------------------------------------------------------------------------ | :------------------------------------------------- |
+| 7-Zip          | 有极高压缩比的开源压缩软件                           | [官网地址](https://www.7-zip.org/)                                              |                                                    |
+| 360 压缩       | 压缩格式多 免费无广告                                | [官网地址](https://yasuo.360.cn)                                                |                                                    |
+| QQ 拼音输入法  | 比搜狗好的太多 主要没广告                            | [官网地址](http://qq.pinyin.cn)                                                 |                                                    |
+| SwitchHosts    | 快速切换不同的 hosts 设置、编辑 hosts 文件           | [官网地址](https://github.com/oldj/SwitchHosts)                                 |                                                    |
+| TrafficMonitor | 网速监控悬浮窗软件 可以显示当前网速 CPU 及内存利用率 | [官网地址](https://github.com/zhongyang219/TrafficMonitor)                      |                                                    |
+| Bing Wallpaper | 一次浏览一张照片来探索世界                           | [官网地址](https://www.microsoft.com/zh-cn/bing/bing-wallpaper?rtc=1#primaryR2) |                                                    |
+| PowerToys      | 自定义 Windows 的实用工具                            | [官网地址](https://docs.microsoft.com/zh-cn/windows/powertoys/)                 | [下载渠道](https://github.com/microsoft/PowerToys) |
+| Snipaste       | 一款「截图 + 贴图」的工具                            | [官网地址](https://www.snipaste.com/)                                           |                                                    |
+| Bandicam       | 一款简单好用的录屏软件                               | [官网地址](https://www.bandicam.cn/)                                            | [下载渠道](https://www.423down.com/2119.html)      |
+| Ditto          | 免费开源的剪贴板增强软件                             | [官网地址](https://ditto-cp.sourceforge.io)                                     |                                                    |
+| Everything     | 基于名称快速定位文件和文件夹                         | [官网地址](https://www.voidtools.com/zh-cn/)                                    |                                                    |
+| uTools         | 你的生产力工具集 自由集成丰富插件                    | [官网地址](https://u.tools)                                                     |                                                    |
+| 互传           | 零流量、极速/多平台                                  | [官网地址](https://es.vivo.com.cn/)                                             |                                                    |
+| 钱迹           | 个人财务管理 发现记账的乐趣 全平台支持               | [官网地址](https://www.qianjiapp.com/)                                          |                                                    |
+
+- ### 浏览器
+
+| 软件       | 描述                                        | 官网地址                                         | 下载渠道 |
+| :--------- | :------------------------------------------ | :----------------------------------------------- | :------- |
+| Arc        | 未来的浏览器                                | [官网地址](https://arc.net/)                     |          |
+| Edge       | 新界面更加清爽现代化                        | [官网地址](https://www.microsoft.com/zh-cn/edge) |          |
+| Edge-dev   | 新界面更加清爽现代化                        | [官网地址](https://www.microsoft.com/zh-cn/edge) |          |
+| Chrome     | 最强的浏览器 没有对手的存在                 | [官网地址](https://www.google.cn/chrome/)        |          |
+| Firefox    | 号称最快的浏览器 用的还行                   | [官网地址](https://www.firefox.com.cn)           |          |
+| 奔跑的奶酪 | 提供 Edge Chrome Firefox 各个平台增强绿色版 | [官网地址](https://www.runningcheese.com/)       |          |
+
+- ### 浏览器-插件
+
+| 插件                                                     | Edge 下载                                                                                                                                                                                                                                                                | Chrome 下载                                                                                                                                                                                                              |
+| :------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Vue.js devtools                                          | [插件地址](https://microsoftedge.microsoft.com/addons/detail/vuejs-devtools/olofadcdnkkjdfgjcmjaadnlehnnihnl)                                                                                                                                                            | [插件地址](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)                                                                                                                    |
+| Don't Close Window With Last Tab                         | [插件地址](https://microsoftedge.microsoft.com/addons/detail/dont-close-window-with-l/feebepaidmpgnkpngmeldoooofaacbhi)                                                                                                                                                  | [插件地址](https://chrome.google.com/webstore/detail/dont-close-window-with-la/dlnpfhfhmkiebpnlllpehlmklgdggbhn)                                                                                                         |
+| Chrome 清理大师                                          | [插件地址](https://microsoftedge.microsoft.com/addons/detail/edge%E6%B8%85%E7%90%86%E5%A4%A7%E5%B8%88%EF%BC%9A%E4%B8%80%E9%94%AE%E6%B8%85%E7%90%86%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9E%83%E5%9C%BE%EF%BC%8C%E8%AE%A9%E4%BD%A0%E7%9A%84edg/nlcebdoehkdiojeahkofcfnolkleembf) | [插件地址](https://chrome.google.com/webstore/detail/clean-master-the-best-chr/eagiakjmjnblliacokhcalebgnhellfi)                                                                                                         |
+| uBlock Origin                                            | [插件地址](https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak)                                                                                                                                                             | [插件地址](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)                                                                                                                     |
+| AdGuard 广告拦截器                                       | [插件地址](https://microsoftedge.microsoft.com/addons/detail/adguard-%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA%E5%99%A8/pdffkfellgipmhklpdmokmckkkfcopbh)                                                                                                                     | [插件地址](https://chrome.google.com/webstore/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg)                                                                                                                 |
+| Bitwarden - 免费密码管理器                               | [插件地址](https://microsoftedge.microsoft.com/addons/detail/bitwarden-%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%99%A8/jbkfoedolllekgbhcbcoahefnbanhhlh)                                                                                                                   | [插件地址](https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb)                                                                                                         |
+| Tampermonkey - 篡改猴                                    | [插件地址](https://microsoftedge.microsoft.com/addons/detail/%E7%AF%A1%E6%94%B9%E7%8C%B4/iikmkjmpaadaobahmlepeloendndfphd)                                                                                                                                               | [插件地址](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)                                                                                                                      |
+| 京价保 - 京东价保助手                                    | [插件地址](https://microsoftedge.microsoft.com/addons/detail/%E4%BA%AC%E4%BB%B7%E4%BF%9D-%E4%BA%AC%E4%B8%9C%E4%BB%B7%E4%BF%9D%E5%8A%A9%E6%89%8B/ljdjkkjiognkghfjndoddoplekppngge)                                                                                        | [插件地址](https://chrome.google.com/webstore/detail/%E4%BA%AC%E4%BB%B7%E4%BF%9D-%E4%BA%AC%E4%B8%9C%E4%BB%B7%E4%BF%9D%E5%8A%A9%E6%89%8B/gfgkebiommjpiaomalcbfefimhhanlfd)                                                |
+| 喵喵折+                                                  | [插件地址](https://microsoftedge.microsoft.com/addons/detail/%E5%96%B5%E5%96%B5%E6%8A%98/pbmmogmpniaejfceedmjhdobmenbggoo)                                                                                                                                               | [插件地址](https://chrome.google.com/webstore/detail/%E5%96%B5%E5%96%B5%E6%8A%98%20/ekbmhggedfdlajiikminikhcjffbleac)                                                                                                    |
+| 稀土掘金                                                 | [插件地址](https://microsoftedge.microsoft.com/addons/detail/%E7%A8%80%E5%9C%9F%E6%8E%98%E9%87%91/iblloeofmdhfkbkpjkkombjngddeocjk)                                                                                                                                      | [插件地址](https://chrome.google.com/webstore/detail/%E7%A8%80%E5%9C%9F%E6%8E%98%E9%87%91/lecdifefmmfjnjjinhaennhdlmcaeeeb)                                                                                              |
+| ACG助手 - 专为哔哩哔哩(bilibili)定制，可视频下载消息推送 | [插件地址](https://microsoftedge.microsoft.com/addons/detail/acg%E5%8A%A9%E6%89%8B-%E4%B8%93%E4%B8%BA%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9bilibili%E5%AE%9A/fcfebhekhbkhjjimonjmbgmkbclheaoh)                                                                             | [插件地址](https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh) |
+| 迅雷下载支持                                             | [插件地址](https://microsoftedge.microsoft.com/addons/detail/%E8%BF%85%E9%9B%B7%E4%B8%8B%E8%BD%BD%E6%94%AF%E6%8C%81/popomkonnjgcdagdhgcpcekbdeoibglc)                                                                                                                    | [插件地址](https://chrome.google.com/webstore/detail/%E8%BF%85%E9%9B%B7%E4%B8%8B%E8%BD%BD%E6%94%AF%E6%8C%81/ncennffkjdiamlpmcbajkmaiiiddgioo)                                                                            |
+
+- ### 下载工具
+
+| 软件               | 描述                               | 官网地址                              | 下载渠道 |
+| :----------------- | :--------------------------------- | :------------------------------------ | :------- |
+| 迅雷               | 更快 但不止于快                    | [官网地址](https://dl.xunlei.com)     |          |
+| BitTorrent Tracker | 全网热门 BitTorrent Tracker 列表！ | [官网地址](https://trackerslist.com/) |          |
+
+- ### 网盘工具
+
+| 软件     | 描述                                 | 官网地址                                           | 下载渠道 |
+| :------- | :----------------------------------- | :------------------------------------------------- | :------- |
+| 百度网盘 | 基本必须下载的网盘 主要资源多        | [官网地址](http://pan.baidu.com/download)          |          |
+| 坚果云   | 帮助企业中的变革者改善工作效率和方法 | [官网地址](https://www.jianguoyun.com/s/downloads) |          |
+
+- ### 办公软件
+
+| 软件             | 描述                                                         | 官网地址                                                  | 下载渠道                                      |
+| :--------------- | :----------------------------------------------------------- | :-------------------------------------------------------- | :-------------------------------------------- |
+| Microsoft Office | 微软 Office 兼容性最好的                                     | [官网地址](https://www.microsoft.com/zh-cn/microsoft-365) | [下载渠道](https://otp.landian.vip/zh-cn/)    |
+| WPS              | 免费小巧 购买会员就没有广告了                                | [官网地址](https://www.wps.cn)                            | [下载渠道](https://www.423down.com/8890.html) |
+| iSlide           | 基于 PPT 的插件工具 注意需要付费                             | [官网地址](https://www.islide.cc/)                        |                                               |
+| 欧路词典         | 权威的英语词典软件 英语学习者必备的工具                      | [官网地址](https://www.eudic.net/v4/en/app/eudic)         |                                               |
+| XMind            | 全功能的思维导图和头脑风暴软件                               | [官网地址](https://www.xmind.cn)                          | [下载渠道](https://www.423down.com/9212.html) |
+| 亿图图示         | 60 余种办公绘图类型 流程图 架构图 工业设计 图文混排 一软搞定 | [官网地址](https://www.edrawsoft.cn/)                     | [下载渠道](https://www.423down.com/8077.html) |
+| 为知笔记         | 大脑是用来思考的 记录的事情交给我们                          | [官网地址](https://www.wiz.cn/zh-cn/wiznew.html)          |                                               |
+| 思源笔记         | 思源笔记是一款隐私优先的个人知识管理系统                     | [官网地址](https://b3log.org/siyuan/)                     |                                               |
+| VNote            | 一个舒适的笔记平台                                           | [官网地址](https://github.com/vnotex/vnote)               |                                               |
+
+- ### 通讯协作
+
+| 软件         | 描述                         | 官网地址                                          | 下载渠道                                                 |
+| :----------- | :--------------------------- | :------------------------------------------------ | :------------------------------------------------------- |
+| QQ           | I'm QQ - 每一天 乐在沟通     | [官网地址](https://im.qq.com)                     |                                                          |
+| 微信         | 微信 是一个生活方式          | [官网地址](https://weixin.qq.com)                 |                                                          |
+| 网易邮箱大师 | 高效强大的全平台邮箱客户端   | [官网地址](https://mail.163.com/dashi/index.html) |                                                          |
+| 腾讯会议     | 腾讯会议,会开会              | [官网地址](https://meeting.tencent.com/)          |                                                          |
+| Zoom         | 视频会议、云电话、网络研讨会 | [官网地址](https://www.zoom.us/)                  | [下载渠道](https://www.zoom.us/download#client_4meeting) |
+
+- ### 影音娱乐
+
+| 软件    | 描述                                                         | 官网地址                                                  | 下载渠道 |
+| :------ | :----------------------------------------------------------- | :-------------------------------------------------------- | :------- |
+| Listen1 | One for all free music in China                              | [官网地址](https://listen1.github.io/listen1/)            |          |
+| MPV     | 高手推荐的跨平台全能视频播放器！开源、简约、键盘流、配置灵活 | [官网地址](https://mpv.io/)                               |          |
+| VLC     | 是一款自由、开源的跨平台多媒体播放器                         | [官网地址](https://www.videolan.org/vlc/index.zh_CN.html) |          |
 
 - ## 设计制作
 
-| 软件  | 描述 | 官网地址 | 下载渠道 |
-| :---- | :--- | :------- | :------- |
-| xxxxx | xxxx | xxxxx    | xxxxx    |
+- ### 平面设计
 
-- **2345 看图王**
+| 软件        | 描述                         | 官网地址                              | 下载渠道                                         |
+| :---------- | :--------------------------- | :------------------------------------ | :----------------------------------------------- |
+| Adobe       | Adobe 正通过数字体验改变世界 | [官网地址](https://www.adobe.com/cn/) | [哔哩主页](https://space.bilibili.com/252157636) |
+| 2345 看图王 | 一款超好用的看图软件         | [官网地址](https://pic.2345.cc)       | [下载渠道](https://www.423down.com/4111.html)    |
 
-  > [官网地址](https://pic.2345.cc)
-  > [下载渠道](https://www.423down.com/4111.html)
-  > 一款超好用的看图软件
+- ### 视频制作
 
-- **Adobe**
+| 软件  | 描述                                       | 官网地址                              | 下载渠道                                                                                                            |
+| :---- | :----------------------------------------- | :------------------------------------ | :------------------------------------------------------------------------------------------------------------------ |
+| Adobe | Adobe 正通过数字体验改变世界               | [官网地址](https://www.adobe.com/cn/) | [哔哩主页](https://space.bilibili.com/252157636)<br>[微博大咖](https://weibo.com/vposy?profile_ftype=1&is_all=1#_0) |
+| 剪映  | 全能易用的桌面端剪辑软件-轻而易剪 上演大幕 | [官网地址](https://www.capcut.cn/)    |                                                                                                                     |
 
-  > [官网地址](https://www.adobe.com/cn/)
-  > [哔哩主页](https://space.bilibili.com/252157636)
-  > [微博大咖](https://weibo.com/vposy?profile_ftype=1&is_all=1#_0)
-  > Adobe 正通过数字体验改变世界
+- ### 原型设计
 
-- **Axure**
+| 软件  | 描述                         | 官网地址                              | 下载渠道                                         |
+| :---- | :--------------------------- | :------------------------------------ | :----------------------------------------------- |
+| Adobe | Adobe 正通过数字体验改变世界 | [官网地址](https://www.adobe.com/cn/) | [哔哩主页](https://space.bilibili.com/252157636) |
+| Axure | 专业的快速原型设计工具       | [官网地址](https://www.axure.com.cn/) |                                                  |
 
-  > [官网地址](https://www.axure.com.cn/)
-  > 专业的快速原型设计工具
+## 开发编程
 
-- ## 影音娱乐
+- ### 虚拟机
 
-| 软件  | 描述 | 官网地址 | 下载渠道 |
-| :---- | :--- | :------- | :------- |
-| xxxxx | xxxx | xxxxx    | xxxxx    |
+| 软件       | 描述                                                                                                      | 官网地址                                                                              | 下载渠道 |
+| :--------- | :-------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------ | :------- |
+| VirtualBox | VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use. | [官网地址](https://www.virtualbox.org/)                                               |          |
+| VMware     | Develop and Test for Any Platform With VMware Desktop Hypervisors                                         | [官网地址](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion) |          |
 
-- **Listen1**
+- ### 远程控制
 
-  > [官网地址](https://listen1.github.io/listen1/)
-  > One for all free music in China
+| 软件                 | 描述                   | 官网地址                                                             | 下载渠道 |
+| :------------------- | :--------------------- | :------------------------------------------------------------------- | :------- |
+| Xmanager Power Suite | 性能驱动的网络连接方案 | [官网地址](https://www.xshell.com/zh/xmanager-power-suite-download/) |          |
+| 向日葵               | 提供安全顺畅的远程体验 | [官网地址](https://sunlogin.oray.com/download)                       |          |
+| ToDesk               | 不一样的远控体验       | [官网地址](https://www.todesk.com/download.html)                     |          |
 
-- **PotPlayer**
+- ### 开发环境
 
-  > [官网地址](https://potplayer.org/)
-  > [下载渠道](http://www.potplayercn.com/download)
-  > Win 平台上最优秀的免费影音全能格式播放器
+| 软件             | 描述                                                        | 官网地址                                  | 下载渠道                                |
+| :--------------- | :---------------------------------------------------------- | :---------------------------------------- | :-------------------------------------- |
+| Spring_STS       | 定制版的 Eclipse 专为 Spring 开发定制的                     | [官网地址](https://spring.io/tools)       |                                         |
+| Microsoft_VSCode | 免费开源的现代化轻量级代码编辑器 支持几乎所有主流的开发语言 | [官网地址](https://code.visualstudio.com) |                                         |
+| JetBrains_All    | 完整的开发人员工具包                                        | [官网地址](https://www.jetbrains.com)     | [下载渠道](https://www.exception.site/) |
+| DCloud_HBuilderX | 轻量编辑器和强大 IDE 的完美结合体                           | [官网地址](https://www.dcloud.io)         |                                         |
 
-- **WeGame**
-  > [官网地址](https://www.wegame.com.cn/)
-  > WeGame 游戏商店
+- ### 工具集锦
 
-# 开发工具
-
-::: tip
-程序员是最会偷懒的人 你学会了么
-:::
-
-- **Bluestacks**
-
-  > [官网地址](https://www.bluestacks.com)
-  > [下载渠道](https://www.bluestacks.com/bluestacks-5.html)
-  > VMware 是功能最强大的虚拟机软件
-
-- **VMware**
-
-  > [官网地址](https://customerconnect.vmware.com/cn/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/16_0)
-  > [下载渠道](https://www.423down.com/5928.html)
-  > 包含 Xmanager Xshell Xftp Xlpd
-
-- ## 远程控制
-
-  - **向日葵远程控制**
-
-    > [官网地址](https://sunlogin.oray.com/)
-    > VMware 是功能最强大的虚拟机软件
-
-  - **Xmanager Power Suite**
-    > [官网地址](https://www.xshell.com/zh/)
-    > [下载渠道-官方](https://www.xshell.com/zh/xmanager-power-suite-download/)
-    > [下载渠道-三方-423DOWN](https://www.423down.com/10045.html)
-    > [下载渠道-三方-果核剥壳](https://www.ghxi.com/xmanagerpowersuite.html)
-    > 包含 Xmanager Xshell Xftp Xlpd
-
-- ## 开发环境
-
-  - **Spring_STS**
-
-    > [官网地址](https://spring.io/tools)
-    > 定制版的 Eclipse 专为 Spring 开发定制的
-
-  - **Microsoft_VSCode**
-
-    > [官网地址](https://code.visualstudio.com)
-    > 免费开源的现代化轻量级代码编辑器 支持几乎所有主流的开发语言
-
-  - **JetBrains_All**
-
-    > [官网地址](https://www.jetbrains.com)
-    > 完整的开发人员工具包
-
-  - **DCloud_HBuilderX**
-    > [官网地址](https://www.dcloud.io)
-    > 轻量编辑器和强大 IDE 的完美结合体 适合前端开发 尤其是 Vue
-
-- ## 工具集锦
-
-  - **Notepad++**
-
-    > [官网地址](https://notepad-plus-plus.org)
-    > [下载渠道](https://www.423down.com/8867.html)
-    > 免费的强大文本编辑器
-
-  - **EditPlus**
-
-    > [官网地址](https://www.editplus.com)
-    > [下载渠道](https://www.423down.com/1689.html)
-    > 小巧强大的代码文本编辑器
-
-  - **Navicat**
-
-    > [官网地址](https://www.navicat.com.cn/download/navicat-premium)
-    > Navicat Premium 是一套可创建多个连接的数据库开发工具
-
-  - **PDManer**
-
-    > [官网地址](https://gitee.com/robergroup/pdmaner)
-    > 数据库建模
-
-  - **Postman**
-
-    > [官网地址](https://www.postman.com/)
-    > HTTP 协议的接口调试与测试工具
-
-  - **Apifox**
-    > [官网地址](https://www.apifox.cn/)
-    > API 一体化协作平台
+| 软件      | 描述                                             | 官网地址                                                        | 下载渠道                                      |
+| :-------- | :----------------------------------------------- | :-------------------------------------------------------------- | :-------------------------------------------- |
+| EditPlus  | Text editor with FTP, FTPS and sftp capabilities | [官网地址](https://www.editplus.com)                            | [下载渠道](https://www.423down.com/1689.html) |
+| Notepad++ | 免费的强大文本编辑器                             | [官网地址](https://notepad-plus-plus.org)                       |                                               |
+| PDManer   | 数据库建模                                       | [官网地址](https://gitee.com/robergroup/pdmaner)                |                                               |
+| Navicat   | 数据库开发工具                                   | [官网地址](https://www.navicat.com.cn/download/navicat-premium) | [下载渠道](https://www.modb.pro/db/571136)    |
+| Postman   | API 开发和测试的工具                             | [官网地址](https://www.postman.com/)                            |                                               |
+| Apifox    | API 设计、开发、测试一体化协作平台               | [官网地址](https://www.apifox.cn/)                              |                                               |
