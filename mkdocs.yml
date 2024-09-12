@@ -177,7 +177,7 @@ plugins:
             About: 关于
             Sponsorship: 赞助
             Soft: 软件
-            DL: 开发语言
+            DP: 开发编程
             IDE: 开发工具
             VCS: 版本控制
             CICD: 持续集成/持续部署
@@ -195,11 +195,11 @@ nav:
       - Windows: "./notes/soft/windows.md"
       - Mac: "./notes/soft/mac.md"
       - Android: "./notes/soft/android.md"
-  - DL:
-      - "./notes/dl/index.md"
-      - Java: "./notes/dl/java/index.md"
-      - Go: "./notes/dl/go/index.md"
-      - Python: "./notes/dl/python/index.md"
+  - DP:
+      - "./notes/dp/index.md"
+      - Java: "./notes/dp/java/index.md"
+      - Go: "./notes/dp/go/index.md"
+      - Python: "./notes/dp/python/index.md"
   - IDE:
       - "./notes/ide/index.md"
   - VCS:

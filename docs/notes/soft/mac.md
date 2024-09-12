@@ -14,13 +14,13 @@
 - 安装脚本 ( [国内源](https://gitee.com/cunkai/HomebrewCN) )
 
   ```zsh
-  /bin/zsh -c "(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+  /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
   ```
 
 - 卸载脚本 ( [国内源](https://gitee.com/cunkai/HomebrewCN) )
 
   ```zsh
-  /bin/zsh -c "(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh)"
+  /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/HomebrewUninstall.sh)"
   ```
 
 - 安装软件
@@ -44,6 +44,6 @@
 
 - ### 系统工具
 
-    | 软件 | 描述  | 官网地址 | 下载渠道 |
-    | :--- | :---- | :------- | :------- |
-    | xxxx | xxxxx | xxxxx    |          |
+    | 软件 | 描述  | 官网地址 | 下载渠道 | brew 安装命令 |
+    | :--- | :---- | :------- | :------- | :------------ |
+    | xxxx | xxxxx | xxxxx    |         |               |
