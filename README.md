@@ -1,4 +1,4 @@
-# flybird-site
+﻿# flybird-site
 
 ## Reference
 
@@ -83,6 +83,7 @@ poetry add mkdocs-minify-plugin
 poetry add mkdocs-rss-plugin
 poetry add mkdocs-static-i18n
 poetry add mkdocs-table-reader-plugin
+poetry add mkdocs-macros-plugin
 # add package end
 
 # poetry remove [package-name]

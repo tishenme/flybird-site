@@ -160,6 +160,9 @@ plugins:
       # lang:
       #   - en
       #   - zh
+  - macros
+  - table-reader:
+      encoding: utf-8
   - minify:
       minify_html: true
   - i18n:
