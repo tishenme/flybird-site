@@ -27,8 +27,8 @@
 
     - 请在 [Homebrew Formulae](https://formulae.brew.sh/) 搜索软件
 
-        ![img](image/homebrew.png)
-        ![img](image/wpsoffice-cn.png)
+        ![img](../image/homebrew.png)
+        ![img](../image/wpsoffice-cn.png)
 
     - 执行安装命令
 

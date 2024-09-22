@@ -138,6 +138,8 @@ markdown_extensions:
             #     slugify: !!python/object/apply:pymdownx.slugs.slugify
             #       kwds:
             #         case: lower
+
+
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
@@ -195,9 +197,24 @@ nav:
       - About: "./notes/home/about.md"
       - Sponsorship: "./notes/home/sponsorship.md"
   - Soft:
-      - Windows: "./notes/soft/windows.md"
-      - Mac: "./notes/soft/mac.md"
-      - Android: "./notes/soft/android.md"
+      - Windows:
+          - Tips: "./notes/soft/mk_windows/Tips.md"
+          - 系统工具: "./notes/soft/mk_windows/系统工具.md"
+          - 应用软件: "./notes/soft/mk_windows/应用软件.md"
+          - 图形设计: "./notes/soft/mk_windows/图形设计.md"
+          - 媒体工具: "./notes/soft/mk_windows/媒体工具.md"
+          - 网络工具: "./notes/soft/mk_windows/网络工具.md"
+          - 编程开发: "./notes/soft/mk_windows/编程开发.md"
+      - Mac:
+          - Tips: "./notes/soft/mk_mac/Tips.md"
+          - 系统工具: "./notes/soft/mk_mac/系统工具.md"
+          - 应用软件: "./notes/soft/mk_mac/应用软件.md"
+          - 图形设计: "./notes/soft/mk_mac/图形设计.md"
+          - 媒体工具: "./notes/soft/mk_mac/媒体工具.md"
+          - 网络工具: "./notes/soft/mk_mac/网络工具.md"
+          - 编程开发: "./notes/soft/mk_mac/编程开发.md"
+      - Android:
+          - Tips: "./notes/soft/mk_android/Tips.md"
   - DP:
       - "./notes/dp/index.md"
       - Java: "./notes/dp/java/index.md"
