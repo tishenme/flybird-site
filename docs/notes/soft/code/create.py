@@ -7,7 +7,7 @@ folder_structure = {
         '系统优化': [],
         '安全防护': [],
         '数据恢复': [],
-        '破解工具': [],
+        '硬件工具': [],
         '窗口控制': [],
         '文件管理': [],
     },
@@ -50,7 +50,6 @@ folder_structure = {
     },
     '编程开发': {
         '虚拟机': [],
-        '文本处理': [],
         '版本控制': [],
         '编程工具': [],
         '数据库工具': [],
@@ -67,6 +66,15 @@ def create_file_if_not_exists(file_path):
     else:
         print(f"The file {file_path} already exists.")
 
+def replace_char_in_file(file_path, old_char, new_char):
+    # print("replace")
+    with open(file_path, 'r+', encoding="utf-8") as file:
+        content = file.read()
+        content = content.replace(old_char, new_char)
+        file.seek(0)
+        file.write(content)
+        file.truncate()
+
 # 创建文件夹和文件 ( docs\notes\soft\data )
 base_path = os.path.join(os.getcwd(), "docs", "notes", "soft", "data")
 for category, subcategories in folder_structure.items():
@@ -79,3 +87,6 @@ for category, subcategories in folder_structure.items():
         category_path_mac = category_path + "_mac.csv"
         create_file_if_not_exists(category_path_win)
         create_file_if_not_exists(category_path_mac)
+        for i in range(1, 200):
+            replace_char_in_file(category_path_win, " ,", ",")
+            replace_char_in_file(category_path_mac, " ,", ",")

@@ -53,11 +53,3 @@
     ```zsh
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
     ```
-
-## 装机必备
-
-- ### 系统工具
-
-    | 软件 | 描述  | 官网地址 | 下载渠道 | brew 安装命令 |
-    | :--- | :---- | :------- | :------- | :------------ |
-    | xxxx | xxxxx | xxxxx    |          |               |
