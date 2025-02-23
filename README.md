@@ -50,7 +50,10 @@ cd D:\CodeWork\IDE_Microsoft_VSCode_Workspace
 poetry new flybird-site
 
 # venv ( default python version should be 3.12 )
+poetry source remove tsinghua
 poetry source add tsinghua https://pypi.tuna.tsinghua.edu.cn/simple
+poetry source remove aliyun
+poetry source add aliyun https://mirrors.aliyun.com/pypi/simple/
 
 # use defalut python
 poetry env remove python
