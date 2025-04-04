@@ -21,6 +21,8 @@
 
 ```bash
 
+# both window & maoc easy use
+
 # use conda control python version
 conda deactivate
 conda remove -n venv_conda_project_flybird-site --all -y
@@ -33,7 +35,13 @@ pip list
 conda deactivate
 conda env list
 
+```
+
+```bash
+
 # use poetry control python packages
+
+# install poetry in windows
 python -m pip install --user pipx
 python -m pip install --upgrade --user pipx
 cd ~/AppData/Roaming/Python/Python312/Scripts
@@ -41,12 +49,14 @@ cd ~/AppData/Roaming/Python/Python312/Scripts
 pipx install poetry -v
 poetry --version
 
+# nstall poetry in macos
+brew install poetry
+
 # config
 poetry config --list
 poetry config virtualenvs.in-project true
 
-# init
-cd D:\CodeWork\IDE_Microsoft_VSCode_Workspace
+# init project
 poetry new flybird-site
 
 # venv ( default python version should be 3.12 )
@@ -60,9 +70,15 @@ poetry env remove python
 poetry env use python
 poetry env info
 
-# use conda venv python
+# remove venv macos
 Remove-Item -Path .\.venv -Recurse
 Remove-Item -Path .\poetry.lock -Recurse
+
+# remove venv in macos
+rm -rf .venv
+rm -rf poetry.lock
+
+# use conda venv python
 conda env list
 poetry env use "D:\CodeWork\DL_Python\venv_conda\venv_conda_project_flybird-site\python.exe"
 poetry env use /opt/homebrew/Caskroom/miniconda/base/envs/venv_conda_project_flybird-site/bin/python
