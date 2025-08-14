@@ -1,5 +1,8 @@
 ```python
 
+# 开源Chat UI → Python代理服务 → 获取SPN Token → Azure OpenAI
+# pip install flask requests
+
 import os
 import requests
 from flask import Flask, request, jsonify, stream_with_context, Response
@@ -100,30 +103,47 @@ if __name__ == '__main__':
 
 ```bash
 
-pip install flask requests python-dotenv
-flask run --port=5000
+from fastapi import FastAPI, Request
+from fastapi.responses import StreamingResponse
+import httpx
+from azure.identity import ClientSecretCredential
 
-# 使用Docker部署（最简单方式）
-docker run -d -p 3000:8080 \
-  -e OPENAI_API_KEY=dummy \
-  -e OPENAI_API_BASE_URL=http://your-proxy-host:5000/v1 \
-  -v open-webui:/app/backend/data \
-  --name open-webui \
-  --restart always \
-  ghcr.io/open-webui/open-webui:main
+app = FastAPI()
 
-docker run -d -p 3001:3001 \
-  -e LLM_PROVIDER=openai \
-  -e OPENAI_API_BASE_URL=http://your-proxy-host:5000/v1 \
-  -e OPENAI_API_KEY=dummy \
-  -v anything-llm:/app/server/storage \
-  --name anything-llm \
-  mintplexlabs/anything-llm:latest
+# Azure 配置
+TENANT_ID = "your-tenant-id"
+CLIENT_ID = "your-client-id"
+CLIENT_SECRET = "your-client-secret"
+SCOPE = "https://cognitiveservices.azure.com/.default"
 
-git clone https://github.com/mckaywrigley/chatbot-ui.git
-cd chatbot-ui
-npm install
-# 修改 .env 文件中的 OPENAI_API_BASE_URL=http://your-proxy-host:5000/v1
-npm run dev
+credential = ClientSecretCredential(TENANT_ID, CLIENT_ID, CLIENT_SECRET)
+
+@app.api_route("/openai/{path:path}", methods=["GET", "POST", "PUT", "DELETE"])
+async def proxy(path: str, request: Request):
+    token = credential.get_token(SCOPE).token
+
+    url = f"https://your-azure-openai-resource.openai.azure.com/openai/{path}"
+
+    headers = dict(request.headers)
+    headers.pop("host", None)
+    headers["Authorization"] = f"Bearer {token}"
+    headers["Content-Type"] = "application/json"
+
+    async with httpx.AsyncClient() as client:
+        body = await request.body()
+        response = await client.request(
+            method=request.method,
+            url=url,
+            content=body,
+            headers=headers,
+            params=request.query_params,
+            timeout=30.0
+        )
+
+        return StreamingResponse(
+            response.aiter_bytes(),
+            status_code=response.status_code,
+            headers=dict(response.headers),
+        )
 
 ```
