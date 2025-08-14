@@ -101,7 +101,7 @@ if __name__ == '__main__':
 
 ```
 
-```bash
+```python
 
 from fastapi import FastAPI, Request
 from fastapi.responses import StreamingResponse
