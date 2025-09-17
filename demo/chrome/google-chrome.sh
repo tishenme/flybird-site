@@ -13,13 +13,24 @@ cp /root/google-chrome-stable_current_amd64.deb /root/chrome-offline/google-chro
 cd /root/chrome-offline
 ls -alh
 
-rm -rf /root/chrome-offline/google-chrome.sh
-nano /root/chrome-offline/google-chrome.sh
-cat -n /root/chrome-offline/google-chrome.sh
+rm -rf /root/chrome-offline/download_deps.sh
+nano /root/chrome-offline/download_deps.sh
+cat -n /root/chrome-offline/download_deps.sh
+bash /root/chrome-offline/download_deps.sh
 
-# 从这里开始
-cat chrome-offline-debian12.tar.gz.part_* > chrome-offline-debian12.tar.gz
-tar -zxvf chrome-offline-debian12.tar.gz
-cd chrome-offline
-apt install ./*.deb
-apt --fix-broken install
+cd /root
+tar -cvf - chrome-offline/ | split -b 20M - chrome-offline.tar.part_
+
+cat chrome-offline.tar.part_* > chrome-offline.tar
+tar -xvf chrome-offline.tar
+
+cd ~/chrome-offline
+# 1. 尝试安装所有包
+sudo dpkg -i *.deb
+# 2. 修复依赖和配置（关键！）
+sudo apt install -f
+# 3. 验证安装
+google-chrome --version
+# 4. 启动测试（建议在桌面环境运行）
+google-chrome --no-sandbox --disable-gpu  # 首次测试可用此命令排除权限/驱动问题
+
