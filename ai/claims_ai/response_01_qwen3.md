@@ -1334,3 +1334,240 @@ def main(myblob: func.InputStream):
 4. 模拟 ADI + OpenAI 的测试 fixture
 
 请告诉我你最想先看哪一部分？
+
+### USER
+怎么集成 集成 Application Insights 和 使用 pytest-snapshot 固化 LLM 输出
+
+### ASSISTANT
+非常好！我们将分别说明如何：
+
+1. **集成 Azure Application Insights** 到你的 Claims AI Python Function App，用于监控 OCR/NER/Rule 各阶段性能与错误
+2. **使用 `pytest-snapshot`** 固化 LLM（Azure OpenAI）输出，确保 Prompt 或模型变更不会意外破坏结构化结果
+
+---
+
+## ✅ 一、集成 Azure Application Insights
+
+Application Insights 是 Azure 的应用性能监控（APM）服务，支持日志、指标、分布式追踪。
+
+### 步骤 1：安装依赖
+
+```bash
+# requirements.txt
+applicationinsights>=0.11.10
+opencensus-ext-azure>=1.1.0
+```
+
+> 💡 推荐使用 **OpenCensus**（微软官方推荐），而非旧版 `applicationinsights` 包。
+
+### 步骤 2：初始化 Telemetry（在 `utils/telemetry.py`）
+
+```python
+# utils/telemetry.py
+import os
+from opencensus.ext.azure.log_exporter import AzureLogHandler
+from opencensus.ext.azure.trace_exporter import AzureExporter
+from opencensus.trace.samplers import ProbabilitySampler
+from opencensus.trace.tracer import Tracer
+import logging
+
+# 获取 Instrumentation Key（从 Function App 设置或本地 .env）
+INSTRUMENTATION_KEY = os.getenv("APPINSIGHTS_INSTRUMENTATIONKEY")
+
+# 1. 配置日志导出到 App Insights
+logger = logging.getLogger(__name__)
+logger.addHandler(AzureLogHandler(connection_string=f"InstrumentationKey={INSTRUMENTATION_KEY}"))
+logger.setLevel(logging.INFO)
+
+# 2. 配置分布式追踪
+tracer = Tracer(
+    exporter=AzureExporter(connection_string=f"InstrumentationKey={INSTRUMENTATION_KEY}"),
+    sampler=ProbabilitySampler(rate=1.0)  # 100% 采样（生产可调低）
+)
+
+def log_event(name: str, properties: dict = None):
+    """记录自定义事件"""
+    logger.info(f"CustomEvent: {name}", extra={"custom_dimensions": properties})
+
+def log_exception(ex: Exception, properties: dict = None):
+    """记录异常"""
+    logger.exception("Exception occurred", extra={"custom_dimensions": properties or {}})
+```
+
+### 步骤 3：在关键流程中埋点
+
+#### 示例：`services/ocr_service.py`
+
+```python
+from utils.telemetry import tracer, log_event, log_exception
+
+def run_ocr_on_documents(doc_paths: Dict[str, str]) -> Dict[str, dict]:
+    with tracer.span(name="OCR_Processing") as span:
+        span.add_annotation("Starting OCR for claim")
+        results = {}
+        for doc_type, path in doc_paths.items():
+            try:
+                with tracer.span(name=f"OCR_{doc_type}") as doc_span:
+                    raw_text = azure_document_intelligence_extract(path)
+                    processed = get_processor(doc_type, raw_text)
+                    results[doc_type] = processed
+                    # 记录成功事件
+                    log_event("OCR_Document_Success", {
+                        "doc_type": doc_type,
+                        "field_count": len(processed)
+                    })
+            except Exception as e:
+                log_exception(e, {"doc_type": doc_type, "error_stage": "OCR"})
+                raise
+        return results
+```
+
+#### 示例：`handlers/claim_processor.py`
+
+```python
+def process_claim_from_blob(blob_data, claim_id: str):
+    with tracer.span(name="Claim_Processing") as root_span:
+        root_span.add_annotation(f"Processing claim {claim_id}")
+        try:
+            ocr_result = ocr_service.run(...)
+            ner_result = ner_service.run(ocr_result)
+            rule_result = rule_service.run(ner_result)
+
+            log_event("Claim_Processed_Success", {
+                "claim_id": claim_id,
+                "decision": rule_result["decision"]
+            })
+            return { ... }
+        except Exception as e:
+            log_exception(e, {"claim_id": claim_id})
+            raise
+```
+
+### 步骤 4：Azure Function App 配置
+
+在 **Function App → Configuration → Application settings** 中添加：
+
+| Key | Value |
+|-----|-------|
+| `APPINSIGHTS_INSTRUMENTATIONKEY` | 你的 Application Insights 的 Instrumentation Key |
+
+> ✅ 无需代码修改，OpenCensus 会自动上报到该实例。
+
+### 📊 在 Application Insights 中查看
+
+- **Metrics**：请求速率、失败率、依赖项（ADI/OpenAI）延迟
+- **Logs (Analytics)**：查询自定义事件：
+  ```kusto
+  customEvents
+  | where name == "Claim_Processed_Success"
+  | project timestamp, customDimensions.claim_id, customDimensions.decision
+  ```
+- **End-to-end transaction**：查看单个 claim 的完整调用链
+
+---
+
+## ✅ 二、使用 `pytest-snapshot` 固化 LLM 输出
+
+LLM 输出具有随机性（即使 temperature=0），但业务要求**结构稳定**。`pytest-snapshot` 可将首次运行的输出“固化”为文件，后续运行必须匹配。
+
+### 步骤 1：安装依赖
+
+```bash
+# requirements-test.txt
+pytest
+pytest-snapshot
+```
+
+### 步骤 2：编写带 snapshot 的测试
+
+#### 示例：测试 Invoice V2 处理器
+
+```python
+# tests/unit/document_processors/test_invoice_v2.py
+from document_processors.invoice.v2.rules import apply_rules_v2
+from document_processors.invoice.v2.prompt import PROMPT_TEMPLATE
+from utils.openai_client import call_openai_with_prompt
+
+def test_invoice_v2_full_pipeline(snapshot):
+    # 模拟 ADI 提取的原始文本（真实场景可从测试 PDF 提取）
+    raw_text = """
+    医院发票
+    发票号：INV-2025-8899
+    开票日期：2025年10月15日
+    总金额：RMB 12,500.00
+    货币：CNY
+    """
+
+    # Step 1: LLM 提取（实际调用 OpenAI）
+    extracted = call_openai_with_prompt(PROMPT_TEMPLATE, text=raw_text)
+
+    # Step 2: 应用规则
+    cleaned = apply_rules_v2(extracted)
+
+    # Step 3: 固化输出
+    snapshot.assert_match(cleaned, "invoice_v2_output.json")
+```
+
+> ⚠️ **首次运行**：`pytest` 会创建 `tests/snapshots/test_invoice_v2_output.json`
+> **后续运行**：自动比对，若 LLM 输出变化（如字段名改了），测试失败！
+
+### 步骤 3：管理 Snapshot 文件
+
+- 将 `tests/snapshots/` 加入 Git（作为“黄金标准”）
+- 当 **有意变更** Prompt 或规则时：
+  1. 修改代码
+  2. 运行 `pytest --snapshot-update` 更新 snapshot
+  3. 审查 diff，确认变更合理
+  4. 提交新 snapshot
+
+### 📁 Snapshot 目录结构
+
+```bash
+tests/
+└── snapshots/
+    └── test_invoice_v2_output.json
+    └── test_claim_form_v2_output.json
+```
+
+### 示例 Snapshot 内容 (`invoice_v2_output.json`)
+
+```json
+{
+  "invoice_number": "INV-2025-8899",
+  "total_amount": 12500.0,
+  "issue_date": "2025-10-15",
+  "currency": "CNY"
+}
+```
+
+---
+
+## 🔒 安全提示：避免泄露敏感数据到 Snapshot
+
+- **不要**用真实客户数据做 snapshot
+- 在测试中使用 **合成数据**（如 `INV-TEST-001`, `金额: 100.00`）
+- 在 `call_openai_with_prompt` 中增加脱敏层（测试/生产通用）
+
+```python
+# utils/openai_client.py
+def sanitize_for_llm(text: str) -> str:
+    # 移除身份证、银行卡等（正则）
+    return re.sub(r'\d{17}[\dX]', '[ID_REDACTED]', text)
+```
+
+---
+
+## ✅ 总结
+
+| 能力 | 实现方式 | 价值 |
+|------|--------|------|
+| **监控与可观测性** | OpenCensus + Application Insights | 快速定位 OCR/NER/Rule 瓶颈或错误 |
+| **LLM 输出稳定性** | `pytest-snapshot` + 合成测试数据 | 防止 Prompt/模型变更破坏结构化逻辑 |
+| **安全合规** | 测试数据脱敏 + snapshot 审查 | 避免敏感信息泄露 |
+
+---
+
+是否需要我提供：
+1. 完整的 `utils/telemetry.py` + `conftest.py` 集成示例？
+2. 一个 GitHub Actions workflow 同时运行 pytest + 上传 coverage 到 Codecov？
+3. 如何在 Application Insights 中设置告警（如 OCR 失败率 >5%）？
