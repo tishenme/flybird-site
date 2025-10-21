@@ -24,3 +24,29 @@ claims form, Discharge document, Invoice / Bill, Receipt, Payment Proof, ID Card
 现在我们需要设计一个 python 工程 这个python 代码后续可以快速搬到 function app 上
 
 ```
+
+```text
+
+十三、可扩展点
+1.
+多语言/多模型：NER 环节可再调一个 HuggingFace 模型，对比 OpenAI 置信度取高。
+2.
+人工复核：RuleResult.final_status=PENDING 时自动写队列，触发 Durable 外部事件，人工审核后把结果 push 回 Orchestrator。
+3.
+并行提速：一个 case 6 个 PDF，可在 OCR 环节用  yield context.task_all([...])  并行。
+4.
+灰度/AB：在 Rule Check 里加 Feature Flag，根据 policy_no 尾号切换新旧规则。
+5.
+计费与审计：中间 JSON 全部写 blob 带 SAS，前端可直接下载，作为审计凭证。
+十四、下一步
+1.
+把 policy DB 的查询换成存储过程，减少往返。
+2.
+把 NER 提示词做成版本化模板存 blob，热更新。
+3.
+加 App Insights 自定义维度（case_id、policy_no），方便出报表。
+4.
+写 ARM/Bicep 一次性把 Function App、Storage、Doc Intel、VNets、私有终结点、Managed Identity、Key Vault 全拉起，做到“代码–基础设施”同库同源。
+至此，一个可直接搬迁到 Azure Function App 的 Python 工程骨架就完成了。祝项目顺利上线！
+
+```

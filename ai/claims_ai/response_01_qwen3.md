@@ -243,3 +243,257 @@ pyodbc  # or your DB driver
 ---
 
 需要我提供某个模块的完整代码示例（如 `ocr_service.py` 或 `claim_processor.py`）吗？
+
+### USER
+该设计忽略了 提示词的使用
+
+### ASSISTANT
+你说得非常对！在当前的 AI 驱动流程中，**提示词（Prompt）是核心驱动力**，尤其是在结合 Azure Document Intelligence（ADI）的原始输出与 Azure OpenAI 进行后处理时，**提示词的设计直接决定了结构化质量**。我们应当将 **Prompt Engineering** 作为一等公民纳入系统设计。
+
+---
+
+## ✅ 修正目标：将 Prompt 管理显式化、模块化、可配置化
+
+我们将引入一个 **`prompts/` 目录**，并为每类文档 + 每个处理阶段（OCR 后处理、NER 提取）定义专用提示词模板。同时支持：
+- 动态插值（如文档类型、字段要求）
+- 多语言/多保单类型适配（未来扩展）
+- 版本控制（Prompt V1 → V2）
+
+---
+
+## 📁 更新后的工程结构（含 Prompt 管理）
+
+```bash
+claims-ai-processor/
+│
+├── main.py
+├── requirements.txt
+├── config.py
+│
+├── handlers/
+│   └── claim_processor.py
+│
+├── services/
+│   ├── ocr_service.py
+│   ├── ner_service.py
+│   └── rule_service.py
+│
+├── prompts/                          # ← 新增：提示词管理中心
+│   ├── __init__.py
+│   ├── base_templates.py             # 通用模板函数
+│   ├── ocr_postprocess_prompts.py    # OCR 后处理提示词（按文档类型）
+│   └── ner_extraction_prompts.py     # NER 实体提取提示词
+│
+├── utils/
+│   ├── pdf_splitter.py
+│   ├── db_client.py
+│   └── openai_client.py              # 封装 OpenAI 调用 + prompt 注入
+│
+└── schemas/
+    ├── ocr_schema.py
+    ├── ner_schema.py
+    └── claim_output.py
+```
+
+---
+
+## 🔤 Prompt 设计原则
+
+1. **明确角色与任务**
+   > “你是一个医疗理赔专家，请从以下文本中精确提取...”
+
+2. **强制结构化输出（JSON Schema）**
+   > “请以 JSON 格式返回，仅包含以下字段：{...}”
+
+3. **容错与边界处理**
+   > “如果字段不存在，返回 null，不要编造”
+
+4. **上下文隔离**
+   每个文档类型使用独立 prompt，避免信息污染
+
+---
+
+## 📄 示例：`prompts/ocr_postprocess_prompts.py`
+
+```python
+from typing import Dict
+
+OCR_POSTPROCESS_PROMPTS: Dict[str, str] = {
+    "claim_form": """
+你是一名保险理赔专员。请从以下理赔申请表文本中提取结构化信息。
+要求：
+- 仅返回 JSON，不要任何解释
+- 字段包括：policy_number, patient_name, date_of_birth, claim_amount, diagnosis_summary
+- 若字段缺失，设为 null
+- 金额统一转为数字（如 "12,500.00" → 12500.0）
+
+文本：
+{text}
+""",
+    "invoice": """
+你是一名财务审核员。请从以下医疗发票中提取关键信息。
+要求：
+- 返回 JSON，字段：invoice_number, issue_date, total_amount, currency, provider_name
+- total_amount 必须是 float 类型
+- 日期格式：YYYY-MM-DD
+
+文本：
+{text}
+""",
+    "discharge": """
+你是一名临床文档分析师。请从出院小结中提取：
+- 主要诊断（ICD-10 编码优先，否则用中文描述）
+- 入院日期、出院日期
+- 手术名称（如有）
+- 医生姓名
+
+返回 JSON，字段：primary_diagnosis, admission_date, discharge_date, surgery, attending_physician
+
+文本：
+{text}
+""",
+    # ... 其他文档类型
+}
+```
+
+---
+
+## 🧠 示例：`prompts/ner_extraction_prompts.py`
+
+```python
+NER_EXTRACTION_PROMPTS = {
+    "diagnosis_normalization": """
+给定以下诊断描述，请标准化为最接近的 ICD-10 类别名称（中文）：
+- 如果是“2型糖尿病”，返回“糖尿病”
+- 如果是“急性阑尾炎”，返回“阑尾炎”
+- 无法识别则返回“未知”
+
+诊断文本：{diagnosis_text}
+仅返回标准化名称，不要解释。
+""",
+    "signature_verification": """
+以下是从理赔表中提取的签名区域文本或描述。请判断是否包含有效医生签名：
+- 如果包含“Dr.”、“医师签名”、“签名：张伟”等明确签名信息，返回 true
+- 如果为空、模糊或仅为“[签名]”占位符，返回 false
+
+签名内容：{signature_text}
+仅返回 true 或 false。
+"""
+}
+```
+
+---
+
+## 🛠️ 封装 OpenAI 调用（`utils/openai_client.py`）
+
+```python
+import os
+from openai import AzureOpenAI
+from typing import Dict, Any
+
+client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    api_version="2024-05-01-preview",
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT")
+)
+
+def call_openai_with_prompt(prompt_template: str, **kwargs) -> Dict[str, Any]:
+    prompt = prompt_template.format(**kwargs)
+    response = client.chat.completions.create(
+        model=os.getenv("AZURE_OPENAI_DEPLOYMENT"),
+        messages=[{"role": "user", "content": prompt}],
+        response_format={"type": "json_object"},  # 强制 JSON（需模型支持）
+        temperature=0.0,
+        max_tokens=500
+    )
+    try:
+        return json.loads(response.choices[0].message.content)
+    except Exception as e:
+        # fallback: try to extract JSON from text
+        return extract_json_from_text(response.choices[0].message.content)
+```
+
+> 💡 注意：若模型不支持 `response_format=json_object`，可在 prompt 中强调“只返回 JSON”，并在 `extract_json_from_text` 中用正则/`json5` 容错解析。
+
+---
+
+## 🔄 更新 `ocr_service.py` 使用 Prompt
+
+```python
+from prompts.ocr_postprocess_prompts import OCR_POSTPROCESS_PROMPTS
+from utils.openai_client import call_openai_with_prompt
+
+def run_ocr_on_documents(doc_paths: Dict[str, str]) -> Dict[str, dict]:
+    results = {}
+    for doc_type, local_path in doc_paths.items():
+        # Step 1: Azure Document Intelligence
+        raw_text = azure_document_intelligence_extract_text(local_path)
+
+        # Step 2: OpenAI 结构化（使用对应 prompt）
+        prompt_template = OCR_POSTPROCESS_PROMPTS.get(doc_type)
+        if not prompt_template:
+            raise ValueError(f"No prompt defined for doc_type: {doc_type}")
+
+        structured = call_openai_with_prompt(prompt_template, text=raw_text)
+        results[doc_type] = structured
+
+    return results
+```
+
+---
+
+## 🔄 更新 `ner_service.py` 使用 Prompt
+
+```python
+from prompts.ner_extraction_prompts import NER_EXTRACTION_PROMPTS
+from utils.openai_client import call_openai_with_prompt
+
+def extract_entities(ocr_results: dict) -> dict:
+    discharge = ocr_results.get("discharge", {})
+    claim_form = ocr_results.get("claim_form", {})
+
+    # 标准化诊断
+    raw_diag = discharge.get("primary_diagnosis", "")
+    normalized_diag = call_openai_with_prompt(
+        NER_EXTRACTION_PROMPTS["diagnosis_normalization"],
+        diagnosis_text=raw_diag
+    )
+
+    # 验证签名
+    sig_text = claim_form.get("doctor_signature_section", "")
+    sig_verified = call_openai_with_prompt(
+        NER_EXTRACTION_PROMPTS["signature_verification"],
+        signature_text=sig_text
+    )
+
+    return {
+        "diagnosis": normalized_diag,
+        "doctor_signature_verified": sig_verified,
+        "total_amount": ocr_results["invoice"].get("total_amount"),
+        ...
+    }
+```
+
+---
+
+## 🧪 Prompt 管理最佳实践
+
+| 实践 | 说明 |
+|------|------|
+| **版本化** | `prompts/v1/`, `prompts/v2/`，通过 config 切换 |
+| **A/B 测试** | 在 `config.py` 中支持多 prompt 策略 |
+| **日志记录** | 记录每次调用的 prompt + output，用于迭代优化 |
+| **敏感信息过滤** | 在发送给 OpenAI 前脱敏（如身份证号） |
+
+---
+
+## ✅ 总结：Prompt 是结构化的核心引擎
+
+通过将 Prompt 显式分离为可维护、可测试、可迭代的模块，我们实现了：
+- **高精度结构化**：针对每类文档定制 prompt
+- **快速迭代**：无需改代码，只需更新 prompt 文件
+- **审计与合规**：所有 AI 行为可追溯（输入 prompt + 输出）
+
+---
+
+需要我提供完整的 `prompts/` 目录示例（含 6 类文档的 prompt 模板）或一个端到端的测试用例吗？
