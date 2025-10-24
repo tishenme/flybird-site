@@ -7,7 +7,7 @@
 
 聚焦于整个流程中的input 和output的流程设计
 input 是 user 上传一堆 clamis documents 过去
-每一个claims case 是一个 pdf 里面一下6种数据
+每一个claims case 是一整个 pdf 里面一下6种数据
 claims form, Discharge document, Invoice / Bill, Receipt, Payment Proof, ID Card
 
 我们设计有3个output的环节按顺序来
@@ -23,30 +23,130 @@ claims form, Discharge document, Invoice / Bill, Receipt, Payment Proof, ID Card
 
 现在我们需要设计一个 python 工程 这个python 代码后续可以快速搬到 function app 上
 
-```
+核心需求：
 
-```text
+- 多文档类型（6 类）差异化处理
+- OCR → NER → Rule Check 三阶段流水线
+- Prompt 工程显式管理
+- **文档类型粒度 + 全局粒度** 的双重版本控制
+- 完整的 Pytest 测试体系
+- Azure Function App 可部署架构
+- 可扩展性与可维护性优化点
 
-十三、可扩展点
-1.
-多语言/多模型：NER 环节可再调一个 HuggingFace 模型，对比 OpenAI 置信度取高。
-2.
-人工复核：RuleResult.final_status=PENDING 时自动写队列，触发 Durable 外部事件，人工审核后把结果 push 回 Orchestrator。
-3.
-并行提速：一个 case 6 个 PDF，可在 OCR 环节用  yield context.task_all([...])  并行。
-4.
-灰度/AB：在 Rule Check 里加 Feature Flag，根据 policy_no 尾号切换新旧规则。
-5.
-计费与审计：中间 JSON 全部写 blob 带 SAS，前端可直接下载，作为审计凭证。
-十四、下一步
-1.
-把 policy DB 的查询换成存储过程，减少往返。
-2.
-把 NER 提示词做成版本化模板存 blob，热更新。
-3.
-加 App Insights 自定义维度（case_id、policy_no），方便出报表。
-4.
-写 ARM/Bicep 一次性把 Function App、Storage、Doc Intel、VNets、私有终结点、Managed Identity、Key Vault 全拉起，做到“代码–基础设施”同库同源。
-至此，一个可直接搬迁到 Azure Function App 的 Python 工程骨架就完成了。祝项目顺利上线！
+工程结构（含说明）
+
+claims-ai-processor/
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml                     # ← GitHub Actions: pytest + lint
+│
+├── config/
+│   ├── global_versions.yaml           # ← 全局组件版本（OpenAI 模型、ADI 版本等）
+│   ├── document_versions.yaml         # ← 每类文档的 prompt/rules 版本 + 必填字段
+│   └── settings.py                    # ← 加载 YAML + 环境变量融合
+│
+├── document_processors/               # ← 【核心】每类文档专属处理逻辑
+│   ├── __init__.py
+│   ├── base_processor.py              # 抽象基类
+│   │
+│   ├── claim_form/
+│   │   ├── v1/
+│   │   │   ├── prompt.py
+│   │   │   └── rules.py
+│   │   └── v2/
+│   │       ├── prompt.py
+│   │       └── rules.py
+│   │
+│   ├── discharge/
+│   │   └── v1/
+│   │       ├── prompt.py
+│   │       └── rules.py
+│   │
+│   ├── invoice/
+│   │   ├── v1/
+│   │   │   ├── prompt.py
+│   │   │   └── rules.py
+│   │   └── v2/
+│   │       ├── prompt.py
+│   │       └── rules.py
+│   │
+│   ├── receipt/
+│   │   └── v1/
+│   │       ├── prompt.py
+│   │       └── rules.py
+│   │
+│   ├── payment_proof/
+│   │   └── v1/
+│   │       ├── prompt.py
+│   │       └── rules.py
+│   │
+│   └── id_card/
+│       └── v1/
+│           ├── prompt.py
+│           └── rules.py
+│
+├── ner_extractors/                    # ← NER 阶段：跨文档实体融合
+│   ├── __init__.py
+│   ├── base_ner.py
+│   ├── v1/
+│   │   ├── prompts.py
+│   │   └── extractor.py               # 诊断标准化、签名验证等
+│   └── v2/
+│       ├── prompts.py
+│       └── extractor.py
+│
+├── rule_engines/                      # ← 规则引擎：独立版本
+│   ├── __init__.py
+│   ├── base_rule_engine.py
+│   ├── rules_2025_q3_v1.py
+│   └── rules_2025_q4_v1.py
+│
+├── services/                          # ← 流水线调度
+│   ├── ocr_service.py                 # 调用 document_processors
+│   ├── ner_service.py                 # 调用 ner_extractors
+│   └── rule_service.py                # 调用 rule_engines + DB
+│
+├── handlers/
+│   └── claim_processor.py             # 端到端 orchestration
+│
+├── utils/
+│   ├── azure_document_intelligence.py # 封装 ADI 调用
+│   ├── openai_client.py               # 封装 OpenAI + prompt 注入
+│   ├── db_client.py                   # 数据库连接（policy 查询）
+│   └── pdf_utils.py                   # ZIP 解压、PDF 分类（可选）
+│
+├── schemas/                           # ← Pydantic 模型（用于校验）
+│   ├── ocr_output.py
+│   ├── ner_output.py
+│   ├── rule_output.py
+│   └── claim_result.py                # 最终输出模型
+│
+├── tests/
+│   ├── conftest.py                    # 全局 fixture + mock
+│   │
+│   ├── unit/
+│   │   ├── test_ocr_service.py
+│   │   ├── test_ner_service.py
+│   │   ├── test_rule_service.py
+│   │   └── document_processors/       # ← 每类文档独立测试
+│   │       ├── test_claim_form_v2.py
+│   │       ├── test_invoice_v2.py
+│   │       └── ...
+│   │
+│   └── integration/
+│       └── test_end_to_end.py         # 模拟完整 claim 流程
+│
+├── main.py                            # Azure Function 入口
+├── host.json                          # Function App 配置
+├── function.json                      # Trigger 配置
+├── requirements.txt
+├── requirements-test.txt              # ← 测试依赖
+└── README.md
+
+现在这个结构没有解决 我是收到一个 azure storage 的目录位置 我需要拿到这个目录下面的每一个 clamins pdf 文件,
+需要对一个 pdf 里面的内容进行分类处理 判断出是哪种文档类型 然后按照文档类型进行不同的处理最后输出一个总的 json 交给下一环节 ner 处理
+比如 ocr 每个不同文档的处理 需要逻辑不同 而且需要迭代 这里设计简单点 调用不同版本的 ptyhon 代码即可 灵活性高
+明确每个环节的 iuput 和 output 类容
 
 ```
