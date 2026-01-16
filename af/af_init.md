@@ -29,7 +29,7 @@ uv pip compile requirement.in --constraints constraints_update.txt --output-file
 
 uv run python -m ensurepip --upgrade
 deactivate && source .venv/bin/activate
-which pip3 && pip3 install --upgrade pip
+# which pip3 && pip3 install --upgrade pip
 pip3 download -r requirement_rhel8.txt -d ./packages
 pip3 install --no-index --find-links=./packages -r requirement_rhel8.txt
 deactivate
@@ -37,10 +37,10 @@ deactivate
 pip3 download wheel setuptools build -d ./packages
 dnf install -y gcc openldap-devel
 
-zip -r packages_airflow_20703_py39_20260115.zip ./packages
+zip -r packages_airflow_20703_py39_20260116.zip ./packages
 
-split -b 99M packages_airflow_20703_py39_20260115.zip packages_airflow_part_
-cat packages_airflow_part_* > packages_airflow_20703_py39_20260115.zip
-unzip packages_airflow_20703_py39_20260115.zip
+split -b 99M packages_airflow_20703_py39_20260116.zip packages_airflow_part_
+cat packages_airflow_part_* > packages_airflow_20703_py39_20260116.zip
+unzip packages_airflow_20703_py39_20260116.zip
 
 ```
