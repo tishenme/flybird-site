@@ -1,5 +1,7 @@
 apache-airflow[microsoft-azure,google,ldap,leveldb,postgres,sftp,ssh,amazon,papermill]==2.7.3
 pip
+wheel
+build
 setuptools
 crcmod
 seaborn

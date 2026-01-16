@@ -25,7 +25,7 @@ uv venv --clear
 uv sync
 mamba deactivate
 uv run python -c "import sys; print(sys.executable)"
-uv pip compile requirement.in --constraints constraints-3.9-update.txt --output-file requirement_rhel8.txt --refresh
+uv pip compile requirement.in --constraints constraints_update.txt --output-file requirement_rhel8.txt --refresh
 
 uv run python -m ensurepip --upgrade
 deactivate && source .venv/bin/activate
