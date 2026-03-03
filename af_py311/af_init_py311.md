@@ -21,7 +21,7 @@ pip3 install --upgrade pip
 pip3 install uv
 mamba deactivate
 
-cd /opt/af
+cd /opt/af_py311
 mamba activate base_py311
 uv venv --clear
 uv sync
