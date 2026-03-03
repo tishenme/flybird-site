@@ -31,7 +31,7 @@ uv pip compile requirements.in --constraints constraints_update.txt --output-fil
 
 uv run python -m ensurepip --upgrade
 deactivate && source .venv/bin/activate
-# which pip3 && pip3 install --upgrade pip
+which pip3 && pip3 install --upgrade pip
 pip3 download -r requirements_rhel8.txt -d ./packages
 pip3 install --no-index --find-links=./packages -r requirements_rhel8.txt
 deactivate

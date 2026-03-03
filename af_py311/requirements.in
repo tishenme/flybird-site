@@ -3,6 +3,7 @@ pip
 wheel
 build
 setuptools
+poetry-core
 crcmod
 seaborn
 matplotlib
