@@ -1,0 +1,7 @@
+[project]
+name = "af"
+version = "0.1.0"
+description = "A simple Python project"
+requires-python = ">=3.9,<3.10"
+readme = "README.md"
+dependencies = []

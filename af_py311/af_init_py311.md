@@ -12,15 +12,15 @@ pip3 install uv
 mamba info --envs
 mamba init
 
-mamba remove -n base_py39 --all -y
-mamba create -n base_py39 python==3.9.20 -y
-mamba activate base_py39
+mamba remove -n base_py311 --all -y
+mamba create -n base_py311 python==3.11.14 -y
+mamba activate base_py311
 pip3 install --upgrade pip
 pip3 install uv
 mamba deactivate
 
 cd /opt/af
-mamba activate base_py39
+mamba activate base_py311
 uv venv --clear
 uv sync
 mamba deactivate
