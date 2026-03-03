@@ -1450,6 +1450,8 @@ plyvel==1.5.0
     # via
     #   -c constraints_update.txt
     #   apache-airflow
+poetry-core==2.3.1
+    # via -r requirements.in
 polars==1.35.2
     # via -r requirements.in
 polars-runtime-32==1.35.2
