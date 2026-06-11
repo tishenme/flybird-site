@@ -39,10 +39,10 @@ deactivate
 pip3 download wheel setuptools build -d ./packages
 dnf install -y gcc openldap-devel
 
-zip -r packages_airflow_20703_py311_20260303.zip ./packages
+zip -r packages_airflow_20703_py311_20260612.zip ./packages
 
-split -b 99M packages_airflow_20703_py311_20260303.zip packages_airflow_part_
-cat packages_airflow_part_* > packages_airflow_20703_py311_20260303.zip
-unzip packages_airflow_20703_py311_20260303.zip
+split -b 99M packages_airflow_20703_py311_20260612.zip packages_airflow_part_
+cat packages_airflow_part_* > packages_airflow_20703_py311_20260612.zip
+unzip packages_airflow_20703_py311_20260612.zip
 
 ```
