@@ -1,0 +1,118 @@
+pipeline {
+    agent any
+
+    environment {
+        // 在 Jenkins 中配置的凭据 ID，用于允许 Jenkins 向 Git 仓库推送分支
+        GIT_CREDENTIALS_ID = 'your-github-credential-id'
+    }
+
+    stages {
+        // ==========================================
+        // 阶段 1：PR 校验 (仅在发起 Pull Request 时触发)
+        // ==========================================
+        stage('PR Validation (Branch & POM)') {
+            // env.CHANGE_ID 存在表示这是一个 PR 触发的构建
+            when {
+                expression { env.CHANGE_ID != null }
+            }
+            steps {
+                script {
+                    def targetBranch = env.CHANGE_TARGET
+                    def sourceBranch = env.CHANGE_BRANCH
+
+                    // 1. 分支规范检查 (仅当目标分支是 dev 时)
+                    if (targetBranch == 'dev') {
+                        echo "检查源分支: ${sourceBranch}"
+                        
+                        if (sourceBranch == 'main') {
+                            error("❌ 严重违规：禁止将 main 分支直接合并到 dev！")
+                        }
+                        
+                        if (!(sourceBranch ==~ /^dev_.*/)) {
+                            error("❌ 命名不规范：合并到 dev 的分支必须以 'dev_' 开头 (当前: ${sourceBranch})")
+                        }
+                        echo "✅ 分支命名合规。"
+                    }
+
+                    // 2. POM 唯一性检查
+                    sh '''
+                    echo "🔍 正在扫描 dags/ 目录下的所有 pom.xml..."
+                    DUPLICATES=$(find dags -name "pom.xml" -exec grep -oP '(?<=<artifactId>).*?(?=</artifactId>)' {} + | awk -F ':' '{print $2}' | sort | uniq -d)
+                    
+                    if [ ! -z "$DUPLICATES" ]; then
+                        echo "❌ 错误：检测到重复的 artifactId！"
+                        echo "$DUPLICATES"
+                        exit 1
+                    fi
+                    echo "✅ 所有 DAG 的 artifactId 均唯一。"
+                    '''
+                }
+            }
+        }
+
+        // ==========================================
+        // 阶段 2：底层分支分发 (仅在合并到 dev 或 main 后触发)
+        // ==========================================
+        stage('Deploy DAGs to Trigger Branches') {
+            when {
+                // 只有代码真正 push 或 merge 到这两个主干分支时才执行
+                anyOf {
+                    branch 'dev'
+                    branch 'main'
+                }
+                // 排除 PR 触发，确保是真正的 Push 事件
+                expression { env.CHANGE_ID == null }
+            }
+            steps {
+                withCredentials([gitUsernamePassword(credentialsId: "${GIT_CREDENTIALS_ID}", gitToolName: 'Default')]) {
+                    sh '''
+                    # 修复 Jenkins 可能引起的 Detached HEAD 问题，并确保获取所有分支
+                    git checkout ${BRANCH_NAME}
+                    git pull origin ${BRANCH_NAME}
+
+                    if [ "${BRANCH_NAME}" == "dev" ]; then
+                        ENV_PREFIX="dev-deploy"
+                    elif [ "${BRANCH_NAME}" == "main" ]; then
+                        ENV_PREFIX="prod-deploy"
+                    else
+                        echo "非受控分支，跳过部署"
+                        exit 0
+                    fi
+                    echo "当前环境前缀: $ENV_PREFIX"
+
+                    # 获取上次成功构建到当前构建之间的文件变更
+                    # 注意: 如果 Jenkins 做了浅克隆(Shallow Clone)，可能需要在此前执行 git fetch --unshallow
+                    PREV_COMMIT=${GIT_PREVIOUS_SUCCESSFUL_COMMIT:-HEAD~1}
+                    CHANGED_DIRS=$(git diff --name-only $PREV_COMMIT HEAD | grep '^dags/' | cut -d'/' -f1,2 | sort -u || true)
+
+                    if [ -z "$CHANGED_DIRS" ]; then
+                        echo "未检测到 dags/ 目录下的变更，跳过部署分发。"
+                        exit 0
+                    fi
+
+                    for DIR in $CHANGED_DIRS; do
+                        DAG_NAME=$(basename $DIR)
+                        TARGET_BRANCH="$ENV_PREFIX/$DAG_NAME"
+
+                        # 目录删除逻辑
+                        if [ ! -d "$DIR" ]; then
+                            echo "🗑️ 目录 $DIR 被删除，准备清理远程部署分支 $TARGET_BRANCH"
+                            git push origin --delete $TARGET_BRANCH || true
+                            continue
+                        fi
+
+                        echo "🚀 准备将 $DIR 部署到 $TARGET_BRANCH ..."
+                        
+                        # Git Subtree Split
+                        git subtree split --prefix=$DIR -b temp-split-branch
+                        git push origin temp-split-branch:$TARGET_BRANCH --force
+                        git branch -D temp-split-branch
+                        
+                        echo "✅ $TARGET_BRANCH 更新完毕，已触发底层 Airflow CI 部署！"
+                    done
+                    '''
+                }
+            }
+        }
+    }
+}
